@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>سوبر ذهب - أفضل المنتجات</title>
-    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&display=swap" rel="stylesheet">
     <style>
         * {
             margin: 0;
@@ -13,8 +13,8 @@
         }
 
         body {
-            font-family: 'Cairo', sans-serif;
-            background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
+            font-family: 'Amiri', serif;
+            background: linear-gradient(135deg, #000000 0%, #0a0a0a 100%);
             min-height: 100vh;
             display: flex;
             justify-content: center;
@@ -23,19 +23,21 @@
         }
 
         .container {
-            background: white;
+            background: linear-gradient(135deg, #1a1a1a 0%, #0d0d0d 100%);
             border-radius: 20px;
-            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+            box-shadow: 0 20px 60px rgba(0,0,0,0.5);
             max-width: 800px;
             width: 100%;
             overflow: hidden;
+            border: 1px solid #1a3d17;
         }
 
         header {
-            background: linear-gradient(135deg, #2d5a27 0%, #1a3d17 100%);
+            background: linear-gradient(135deg, #0a4d0a 0%, #063006 100%);
             color: white;
             padding: 30px;
             text-align: center;
+            border-bottom: 2px solid #0a6b0a;
         }
 
         header h1 {
@@ -49,9 +51,10 @@
 
         .products-section h2 {
             text-align: center;
-            color: #333;
+            color: #0a6b0a;
             margin-bottom: 40px;
             font-size: 2em;
+            text-shadow: 0 0 10px rgba(10, 107, 10, 0.3);
         }
 
         .products-grid {
@@ -61,16 +64,18 @@
         }
 
         .product-card {
-            background: white;
+            background: linear-gradient(135deg, #1a1a1a 0%, #0d0d0d 100%);
             border-radius: 15px;
             overflow: hidden;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
             transition: transform 0.3s, box-shadow 0.3s;
+            border: 1px solid #1a3d17;
         }
 
         .product-card:hover {
             transform: translateY(-5px);
-            box-shadow: 0 15px 40px rgba(0,0,0,0.2);
+            box-shadow: 0 15px 40px rgba(10, 107, 10, 0.3);
+            border-color: #0a6b0a;
         }
 
         .product-card .product-image {
@@ -90,13 +95,14 @@
         }
 
         .product-details h3 {
-            color: #333;
+            color: #0a6b0a;
             margin-bottom: 15px;
             font-size: 1.5em;
+            text-shadow: 0 0 5px rgba(10, 107, 10, 0.2);
         }
 
         .product-size {
-            color: #666;
+            color: #a0a0a0;
             margin-bottom: 15px;
             font-size: 1.1em;
         }
@@ -108,13 +114,13 @@
 
         .product-features li {
             padding: 8px 0;
-            color: #555;
+            color: #b0b0b0;
             font-size: 1em;
         }
 
         .product-features li:before {
             content: "✓";
-            color: #2d5a27;
+            color: #0a6b0a;
             margin-left: 10px;
             font-weight: bold;
         }
@@ -122,7 +128,7 @@
         .product-price {
             margin-bottom: 20px;
             font-size: 1.3em;
-            color: #764ba2;
+            color: #0a6b0a;
             font-weight: bold;
         }
 
@@ -134,7 +140,7 @@
         .btn-contact {
             flex: 1;
             padding: 12px;
-            background: linear-gradient(135deg, #2d5a27 0%, #1a3d17 100%);
+            background: linear-gradient(135deg, #0a4d0a 0%, #063006 100%);
             color: white;
             text-decoration: none;
             text-align: center;
@@ -146,7 +152,7 @@
         .btn-whatsapp {
             flex: 1;
             padding: 12px;
-            background: #25D366;
+            background: linear-gradient(135deg, #25D366 0%, #128C7E 100%);
             color: white;
             text-decoration: none;
             text-align: center;
@@ -181,21 +187,22 @@
         .barcode-section {
             text-align: center;
             padding: 30px;
-            background: white;
+            background: linear-gradient(135deg, #1a1a1a 0%, #0d0d0d 100%);
             margin-top: 20px;
         }
 
         .barcode-section h3 {
-            color: #2d5a27;
+            color: #0a6b0a;
             margin-bottom: 20px;
             font-size: 1.3em;
+            text-shadow: 0 0 10px rgba(10, 107, 10, 0.3);
         }
 
         .barcode-container {
             display: inline-block;
             padding: 20px;
-            background: white;
-            border: 2px solid #2d5a27;
+            background: linear-gradient(135deg, #1a1a1a 0%, #0d0d0d 100%);
+            border: 2px solid #0a6b0a;
             border-radius: 10px;
         }
 
@@ -239,22 +246,24 @@
         }
 
         footer {
-            background: #f8f9fa;
+            background: linear-gradient(135deg, #0a0a0a 0%, #000000 100%);
             padding: 20px;
             text-align: center;
-            color: #666;
+            color: #a0a0a0;
+            border-top: 1px solid #1a3d17;
         }
 
         .contact-section {
             padding: 40px;
-            background: #f8f9fa;
+            background: linear-gradient(135deg, #1a1a1a 0%, #0d0d0d 100%);
         }
 
         .contact-section h2 {
             text-align: center;
-            color: #333;
+            color: #0a6b0a;
             margin-bottom: 30px;
             font-size: 2em;
+            text-shadow: 0 0 10px rgba(10, 107, 10, 0.3);
         }
 
         .contact-info {
@@ -265,36 +274,39 @@
         }
 
         .contact-item {
-            background: white;
+            background: linear-gradient(135deg, #1a1a1a 0%, #0d0d0d 100%);
             padding: 20px;
             border-radius: 10px;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.3);
             text-align: center;
+            border: 1px solid #1a3d17;
         }
 
         .contact-item h3 {
-            color: #2d5a27;
+            color: #0a6b0a;
             margin-bottom: 15px;
             font-size: 1.3em;
         }
 
         .contact-item p {
-            color: #555;
+            color: #b0b0b0;
             font-size: 1.1em;
         }
 
         .payment-methods {
-            background: white;
+            background: linear-gradient(135deg, #1a1a1a 0%, #0d0d0d 100%);
             padding: 30px;
             border-radius: 10px;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+            border: 1px solid #1a3d17;
         }
 
         .payment-methods h3 {
-            color: #2d5a27;
+            color: #0a6b0a;
             margin-bottom: 20px;
             font-size: 1.5em;
             text-align: center;
+            text-shadow: 0 0 10px rgba(10, 107, 10, 0.3);
         }
 
         .payment-options {
@@ -309,7 +321,7 @@
             align-items: center;
             gap: 10px;
             padding: 15px 25px;
-            background: linear-gradient(135deg, #2d5a27 0%, #1a3d17 100%);
+            background: linear-gradient(135deg, #0a4d0a 0%, #063006 100%);
             color: white;
             border-radius: 50px;
             font-size: 1.1em;
@@ -369,7 +381,7 @@
                         </div>
                         <div class="product-contact">
                             <a href="tel:07712281072" class="btn-contact">📞 اتصل</a>
-                            <a href="https://wa.me/967712281072" class="btn-whatsapp">💬 واتساب</a>
+                            <a href="https://wa.me/+9647712281072" class="btn-whatsapp">💬 واتساب</a>
                         </div>
                     </div>
                 </div>
@@ -394,7 +406,7 @@
                         </div>
                         <div class="product-contact">
                             <a href="tel:07712281072" class="btn-contact">📞 اتصل</a>
-                            <a href="https://wa.me/967712281072" class="btn-whatsapp">💬 واتساب</a>
+                            <a href="https://wa.me/+9647712281072" class="btn-whatsapp">💬 واتساب</a>
                         </div>
                     </div>
                 </div>
@@ -403,7 +415,7 @@
                         <img src="https://images.unsplash.com/photo-1585771724684-38269d6639fd?w=400&h=400&fit=crop" alt="ملمع استيل">
                     </div>
                     <div class="product-details">
-                        <h3>ملمع استيل</h3>
+                        <h3>ملمع فافون</h3>
                         <p class="product-size">الحجم: 700 مل</p>
                         <div class="product-features">
                             <ul>
@@ -419,7 +431,7 @@
                         </div>
                         <div class="product-contact">
                             <a href="tel:07712281072" class="btn-contact">📞 اتصل</a>
-                            <a href="https://wa.me/967712281072" class="btn-whatsapp">💬 واتساب</a>
+                            <a href="https://wa.me/+9647712281072" class="btn-whatsapp">💬 واتساب</a>
                         </div>
                     </div>
                 </div>
@@ -444,7 +456,7 @@
                         </div>
                         <div class="product-contact">
                             <a href="tel:07712281072" class="btn-contact">📞 اتصل</a>
-                            <a href="https://wa.me/967712281072" class="btn-whatsapp">💬 واتساب</a>
+                            <a href="https://wa.me/+9647712281072" class="btn-whatsapp">💬 واتساب</a>
                         </div>
                     </div>
                 </div>
@@ -462,14 +474,7 @@
                     <h3>واتساب</h3>
                     <p>0771-228-1072</p>
                 </div>
-                <div class="contact-item">
-                    <h3>فيسبوك</h3>
-                    <p>Dove Shampoo Iraq</p>
-                </div>
-                <div class="contact-item">
-                    <h3>تليجرام</h3>
-                    <p>@dove_shampoo_iq</p>
-                </div>
+
             </div>
 
             <div class="payment-methods">
