@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>دوف - شامبو للعناية بالشعر</title>
+    <title>سوبر ذهب - أفضل المنتجات</title>
     <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700&display=swap" rel="stylesheet">
     <style>
         * {
@@ -14,7 +14,7 @@
 
         body {
             font-family: 'Cairo', sans-serif;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
             min-height: 100vh;
             display: flex;
             justify-content: center;
@@ -32,7 +32,7 @@
         }
 
         header {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            background: linear-gradient(135deg, #2d5a27 0%, #1a3d17 100%);
             color: white;
             padding: 30px;
             text-align: center;
@@ -43,45 +43,120 @@
             margin-bottom: 10px;
         }
 
-        .product {
-            display: flex;
+        .products-section {
             padding: 40px;
-            gap: 40px;
-            flex-wrap: wrap;
         }
 
-        .product-image {
-            flex: 1;
-            min-width: 300px;
+        .products-section h2 {
             text-align: center;
-        }
-
-        .product-image img {
-            max-width: 100%;
-            height: auto;
-            border-radius: 15px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
-        }
-
-        .product-info {
-            flex: 1;
-            min-width: 300px;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-        }
-
-        .product-name {
-            font-size: 2em;
             color: #333;
+            margin-bottom: 40px;
+            font-size: 2em;
+        }
+
+        .products-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+        }
+
+        .product-card {
+            background: white;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .product-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.2);
+        }
+
+        .product-card .product-image {
+            width: 100%;
+            height: 250px;
+            overflow: hidden;
+        }
+
+        .product-card .product-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .product-details {
+            padding: 25px;
+        }
+
+        .product-details h3 {
+            color: #333;
+            margin-bottom: 15px;
+            font-size: 1.5em;
+        }
+
+        .product-size {
+            color: #666;
+            margin-bottom: 15px;
+            font-size: 1.1em;
+        }
+
+        .product-features ul {
+            list-style: none;
             margin-bottom: 20px;
         }
 
-        .price {
-            font-size: 2.5em;
+        .product-features li {
+            padding: 8px 0;
+            color: #555;
+            font-size: 1em;
+        }
+
+        .product-features li:before {
+            content: "✓";
+            color: #2d5a27;
+            margin-left: 10px;
+            font-weight: bold;
+        }
+
+        .product-price {
+            margin-bottom: 20px;
+            font-size: 1.3em;
             color: #764ba2;
             font-weight: bold;
-            margin-bottom: 20px;
+        }
+
+        .product-contact {
+            display: flex;
+            gap: 10px;
+        }
+
+        .btn-contact {
+            flex: 1;
+            padding: 12px;
+            background: linear-gradient(135deg, #2d5a27 0%, #1a3d17 100%);
+            color: white;
+            text-decoration: none;
+            text-align: center;
+            border-radius: 8px;
+            font-weight: bold;
+            transition: transform 0.3s;
+        }
+
+        .btn-whatsapp {
+            flex: 1;
+            padding: 12px;
+            background: #25D366;
+            color: white;
+            text-decoration: none;
+            text-align: center;
+            border-radius: 8px;
+            font-weight: bold;
+            transition: transform 0.3s;
+        }
+
+        .btn-contact:hover, .btn-whatsapp:hover {
+            transform: scale(1.05);
         }
 
         .supplier {
@@ -111,7 +186,7 @@
         }
 
         .barcode-section h3 {
-            color: #667eea;
+            color: #2d5a27;
             margin-bottom: 20px;
             font-size: 1.3em;
         }
@@ -120,7 +195,7 @@
             display: inline-block;
             padding: 20px;
             background: white;
-            border: 2px solid #667eea;
+            border: 2px solid #2d5a27;
             border-radius: 10px;
         }
 
@@ -198,7 +273,7 @@
         }
 
         .contact-item h3 {
-            color: #667eea;
+            color: #2d5a27;
             margin-bottom: 15px;
             font-size: 1.3em;
         }
@@ -216,7 +291,7 @@
         }
 
         .payment-methods h3 {
-            color: #667eea;
+            color: #2d5a27;
             margin-bottom: 20px;
             font-size: 1.5em;
             text-align: center;
@@ -234,7 +309,7 @@
             align-items: center;
             gap: 10px;
             padding: 15px 25px;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            background: linear-gradient(135deg, #2d5a27 0%, #1a3d17 100%);
             color: white;
             border-radius: 50px;
             font-size: 1.1em;
@@ -267,28 +342,112 @@
 <body>
     <div class="container">
         <header>
-            <h1>دوف - شامبو للعناية بالشعر</h1>
+            <h1>سوبر ذهب</h1>
         </header>
 
-        <div class="product">
-            <div class="product-image">
-                <img src="https://images.unsplash.com/photo-1631729371254-42c2892f0e6e?w=400" alt="شامبو دوف">
-            </div>
-
-            <div class="product-info">
-                <h2 class="product-name">شامبو دوف</h2>
-                <p class="price">15,000 د.ع</p>
-                <p class="supplier">المصدر: <span>استاذ رواد</span></p>
-
-                <ul class="features">
-                    <li>تنظيف عميق وفعال للشعر</li>
-                    <li>يمنح الشعر لمعاناً طبيعياً</li>
-                    <li>مناسب لجميع أنواع الشعر</li>
-                    <li>تركيبة غنية بالفيتامينات</li>
-                    <li>رائحة منعشة تدوم طويلاً</li>
-                </ul>
-
-                <button class="buy-button">اطلب الآن</button>
+        <div class="products-section">
+            <h2>منتجاتنا</h2>
+            <div class="products-grid">
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="https://images.unsplash.com/photo-1584362917165-526a968a0120?w=400&h=400&fit=crop" alt="مزيل دهون">
+                    </div>
+                    <div class="product-details">
+                        <h3>مزيل دهون</h3>
+                        <p class="product-size">الحجم: 750 مل</p>
+                        <div class="product-features">
+                            <ul>
+                                <li>يزيل الدهون بفعالية عالية</li>
+                                <li>مناسب لجميع الأسطح</li>
+                                <li>آمن على اليدين</li>
+                                <li>رائحة منعشة</li>
+                            </ul>
+                        </div>
+                        <div class="product-price">
+                            <span class="price-label">السعر:</span>
+                            <span class="price-value">قريباً</span>
+                        </div>
+                        <div class="product-contact">
+                            <a href="tel:07701234567" class="btn-contact">📞 اتصل</a>
+                            <a href="https://wa.me/967701234567" class="btn-whatsapp">💬 واتساب</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="https://images.unsplash.com/photo-1631729371254-42c2892f0e6e?w=400&h=400&fit=crop" alt="زاهي">
+                    </div>
+                    <div class="product-details">
+                        <h3>زاهي</h3>
+                        <p class="product-size">الحجم: 900 مل</p>
+                        <div class="product-features">
+                            <ul>
+                                <li>تنظيف عميق وفعال</li>
+                                <li>رائحة منعشة</li>
+                                <li>مناسب لجميع أنواع الأقمشة</li>
+                                <li>يحافظ على لون الملابس</li>
+                            </ul>
+                        </div>
+                        <div class="product-price">
+                            <span class="price-label">السعر:</span>
+                            <span class="price-value">قريباً</span>
+                        </div>
+                        <div class="product-contact">
+                            <a href="tel:07701234567" class="btn-contact">📞 اتصل</a>
+                            <a href="https://wa.me/967701234567" class="btn-whatsapp">💬 واتساب</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="https://images.unsplash.com/photo-1585771724684-38269d6639fd?w=400&h=400&fit=crop" alt="ملمع استيل">
+                    </div>
+                    <div class="product-details">
+                        <h3>ملمع استيل</h3>
+                        <p class="product-size">الحجم: 700 مل</p>
+                        <div class="product-features">
+                            <ul>
+                                <li>يعطي لمعاناً استثنائياً</li>
+                                <li>يزيل الخدوش البسيطة</li>
+                                <li>يحمي من التلف</li>
+                                <li>يحافظ على بريق الاستيل</li>
+                            </ul>
+                        </div>
+                        <div class="product-price">
+                            <span class="price-label">السعر:</span>
+                            <span class="price-value">قريباً</span>
+                        </div>
+                        <div class="product-contact">
+                            <a href="tel:07701234567" class="btn-contact">📞 اتصل</a>
+                            <a href="https://wa.me/967701234567" class="btn-whatsapp">💬 واتساب</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="https://images.unsplash.com/photo-1556228453-efd6c1ff04f6?w=400&h=400&fit=crop" alt="شامبو ملابس">
+                    </div>
+                    <div class="product-details">
+                        <h3>شامبو ملابس</h3>
+                        <p class="product-size">الحجم: 4.5 لتر</p>
+                        <div class="product-features">
+                            <ul>
+                                <li>ينظف الملابس بعمق</li>
+                                <li>يمنع تغير لون الملابس</li>
+                                <li>رائحة منعشة تدوم طويلاً</li>
+                                <li>مناسب للغسيل اليدوي والآلي</li>
+                            </ul>
+                        </div>
+                        <div class="product-price">
+                            <span class="price-label">السعر:</span>
+                            <span class="price-value">قريباً</span>
+                        </div>
+                        <div class="product-contact">
+                            <a href="tel:07701234567" class="btn-contact">📞 اتصل</a>
+                            <a href="https://wa.me/967701234567" class="btn-whatsapp">💬 واتساب</a>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
 
