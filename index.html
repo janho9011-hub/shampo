@@ -38,17 +38,54 @@
             padding: 30px;
             text-align: center;
             border-bottom: 2px solid #0a6b0a;
+            position: relative;
+        }
+        
+        .header-phone {
+            position: absolute;
+            top: 10px;
+            right: 20px;
+            color: white;
+            font-size: 1.2em;
+            z-index: 10;
+        }
+        
+        .header-phone a {
+            color: white;
+            text-decoration: none;
+            margin-left: 15px;
+            display: inline-block;
+        }
+        
+        .header-phone a:hover {
+            color: #a0ffa0;
         }
 
         .logo {
             max-width: 150px;
             height: auto;
             margin-bottom: 15px;
+            animation: logoFloat 3s ease-in-out infinite;
+        }
+        
+        @keyframes logoFloat {
+            0%, 100% {
+                transform: translateY(0);
+            }
+            50% {
+                transform: translateY(-10px);
+            }
         }
 
         header h1 {
             font-size: 2.5em;
             margin-bottom: 10px;
+            color: #000000;
+            text-align: right;
+            margin-right: 0;
+            position: absolute;
+            right: 20px;
+            top: 20px;
         }
 
         .products-section {
@@ -360,6 +397,10 @@
 <body>
     <div class="container">
         <header>
+            <div class="header-phone">
+                <a href="tel:07712281072">📞 0771-228-1072</a>
+                <a href="https://wa.me/+9647712281072">💬 واتساب</a>
+            </div>
             <img src="images/WhatsApp Image 2026-02-06 at 1.07.36 AM.jpeg" alt="سوبر ذهب" class="logo">
             <h1>سوبر ذهب</h1>
         </header>
@@ -369,7 +410,7 @@
             <div class="products-grid">
                 <div class="product-card">
                     <div class="product-image">
-                        <img src="images/product1.jpg" alt="مزيل دهون">
+                        <img src="https://picsum.photos/seed/product1/400/300" alt="مزيل دهون">
                     </div>
                     <div class="product-details">
                         <h3>مزيل دهون</h3>
@@ -394,7 +435,7 @@
                 </div>
                 <div class="product-card">
                     <div class="product-image">
-                        <img src="images/product2.jpg" alt="زاهي">
+                        <img src="https://picsum.photos/seed/product2/400/300" alt="زاهي">
                     </div>
                     <div class="product-details">
                         <h3>زاهي</h3>
@@ -419,7 +460,7 @@
                 </div>
                 <div class="product-card">
                     <div class="product-image">
-                        <img src="images/product3.jpg" alt="ملمع فافون">
+                        <img src="https://picsum.photos/seed/product3/400/300" alt="ملمع فافون">
                     </div>
                     <div class="product-details">
                         <h3>ملمع فافون</h3>
@@ -444,7 +485,7 @@
                 </div>
                 <div class="product-card">
                     <div class="product-image">
-                        <img src="images/product4.jpg" alt="شامبو ملابس">
+                        <img src="https://picsum.photos/seed/product4/400/300" alt="شامبو ملابس">
                     </div>
                     <div class="product-details">
                         <h3>شامبو ملابس</h3>
