@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>سوبر ذهب - أفضل المنتجات</title>
+    <title>سوبر وايت - أفضل المنتجات</title>
     <link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&display=swap" rel="stylesheet">
     <style>
         * {
@@ -14,30 +14,32 @@
 
         body {
             font-family: 'Amiri', serif;
-            background: linear-gradient(135deg, #000000 0%, #0a0a0a 100%);
+            background: linear-gradient(135deg, #ffffff 0%, #e0f7fa 100%);
             min-height: 100vh;
             display: flex;
             justify-content: center;
-            align-items: center;
-            padding: 20px;
+            align-items: flex-start;
+            padding: 10px;
+            overflow-x: hidden;
         }
 
         .container {
-            background: linear-gradient(135deg, #1a1a1a 0%, #0d0d0d 100%);
+            background: linear-gradient(135deg, #ffffff 0%, #f0f8ff 100%);
             border-radius: 20px;
-            box-shadow: 0 20px 60px rgba(0,0,0,0.5);
-            max-width: 800px;
+            box-shadow: 0 20px 60px rgba(0, 150, 200, 0.2);
+            max-width: 1400px;
             width: 100%;
-            overflow: hidden;
-            border: 1px solid #1a3d17;
+            overflow: visible;
+            border: 1px solid #00bcd4;
+            margin: 10px auto;
         }
 
         header {
-            background: linear-gradient(135deg, #0a4d0a 0%, #063006 100%);
+            background: linear-gradient(135deg, #00bcd4 0%, #008ba3 100%);
             color: white;
             padding: 30px;
             text-align: center;
-            border-bottom: 2px solid #0a6b0a;
+            border-bottom: 2px solid #00bcd4;
             position: relative;
         }
         
@@ -58,7 +60,65 @@
         }
         
         .header-phone a:hover {
-            color: #a0ffa0;
+            color: #e0f7fa;
+        }
+
+        .menu-container {
+            position: absolute;
+            top: 10px;
+            left: 20px;
+            z-index: 100;
+        }
+
+        .menu-button {
+            background: linear-gradient(135deg, #00bcd4 0%, #008ba3 100%);
+            color: white;
+            border: none;
+            padding: 12px 20px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 1.1em;
+            font-family: 'Amiri', serif;
+            font-weight: bold;
+            transition: transform 0.3s, box-shadow 0.3s;
+            box-shadow: 0 4px 8px rgba(0, 188, 212, 0.3);
+        }
+
+        .menu-button:hover {
+            transform: scale(1.05);
+            box-shadow: 0 6px 12px rgba(0, 188, 212, 0.4);
+        }
+
+        .menu-dropdown {
+            display: none;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 10px 30px rgba(0, 188, 212, 0.3);
+            min-width: 200px;
+            padding: 10px 0;
+            margin-top: 10px;
+            border: 2px solid #00bcd4;
+        }
+
+        .menu-container:hover .menu-dropdown {
+            display: block;
+        }
+
+        .menu-dropdown a {
+            display: block;
+            padding: 12px 20px;
+            color: #333;
+            text-decoration: none;
+            transition: background 0.3s, color 0.3s;
+            font-size: 1.1em;
+        }
+
+        .menu-dropdown a:hover {
+            background: #00bcd4;
+            color: white;
         }
 
         .logo {
@@ -77,77 +137,125 @@
             }
         }
 
+        @keyframes rgbColor {
+            0% { color: #ff0000; }
+            16% { color: #ff8800; }
+            33% { color: #ffff00; }
+            50% { color: #00ff00; }
+            66% { color: #0088ff; }
+            83% { color: #8800ff; }
+            100% { color: #ff0000; }
+        }
+
         header h1 {
             font-size: 2.5em;
             margin-bottom: 10px;
-            color: #000000;
+            color: #ffffff;
             text-align: right;
             margin-right: 0;
             position: absolute;
             right: 20px;
             top: 20px;
+            animation: rgbColor 3s infinite;
         }
 
         .products-section {
-            padding: 40px;
+            padding: 10px;
         }
 
         .products-section h2 {
             text-align: center;
-            color: #0a6b0a;
-            margin-bottom: 40px;
-            font-size: 2em;
-            text-shadow: 0 0 10px rgba(10, 107, 10, 0.3);
+            color: #00bcd4;
+            margin-bottom: 10px;
+            font-size: 1.5em;
+            text-shadow: 0 0 10px rgba(0, 188, 212, 0.3);
         }
 
         .products-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 30px;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 10px;
         }
 
         .product-card {
-            background: linear-gradient(135deg, #1a1a1a 0%, #0d0d0d 100%);
+            background: linear-gradient(135deg, #ffffff 0%, #f0f8ff 100%);
             border-radius: 15px;
             overflow: hidden;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+            box-shadow: 0 10px 30px rgba(0, 188, 212, 0.15);
             transition: transform 0.3s, box-shadow 0.3s;
-            border: 1px solid #1a3d17;
+            border: 1px solid #00bcd4;
         }
 
         .product-card:hover {
             transform: translateY(-5px);
-            box-shadow: 0 15px 40px rgba(10, 107, 10, 0.3);
-            border-color: #0a6b0a;
+            box-shadow: 0 15px 40px rgba(0, 188, 212, 0.3);
+            border-color: #008ba3;
         }
 
         .product-card .product-image {
             width: 100%;
-            height: 250px;
+            height: 140px;
             overflow: hidden;
+            position: relative;
         }
 
         .product-card .product-image img {
             width: 100%;
             height: 100%;
             object-fit: cover;
+            transition: opacity 0.3s ease;
+        }
+
+        .image-selector {
+            display: flex;
+            justify-content: center;
+            gap: 4px;
+            padding: 5px;
+            background: rgba(255, 255, 255, 0.9);
+            border-top: 1px solid #00bcd4;
+        }
+
+        .image-selector button {
+            width: 35px;
+            height: 35px;
+            border: 2px solid #00bcd4;
+            border-radius: 6px;
+            cursor: pointer;
+            overflow: hidden;
+            transition: transform 0.2s, border-color 0.2s;
+        }
+
+        .image-selector button:hover {
+            transform: scale(1.1);
+            border-color: #008ba3;
+        }
+
+        .image-selector button img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .image-selector button.active {
+            border-color: #ff6b6b;
+            border-width: 3px;
         }
 
         .product-details {
-            padding: 25px;
+            padding: 12px;
         }
 
         .product-details h3 {
-            color: #0a6b0a;
-            margin-bottom: 15px;
-            font-size: 1.5em;
-            text-shadow: 0 0 5px rgba(10, 107, 10, 0.2);
+            color: #00bcd4;
+            margin-bottom: 8px;
+            font-size: 1.2em;
+            text-shadow: 0 0 5px rgba(0, 188, 212, 0.2);
         }
 
         .product-size {
-            color: #a0a0a0;
-            margin-bottom: 15px;
-            font-size: 1.1em;
+            color: #555555;
+            margin-bottom: 8px;
+            font-size: 0.95em;
         }
 
         .product-features ul {
@@ -156,52 +264,54 @@
         }
 
         .product-features li {
-            padding: 8px 0;
-            color: #b0b0b0;
-            font-size: 1em;
+            padding: 4px 0;
+            color: #555555;
+            font-size: 0.85em;
         }
 
         .product-features li:before {
             content: "✓";
-            color: #0a6b0a;
+            color: #00bcd4;
             margin-left: 10px;
             font-weight: bold;
         }
 
         .product-price {
-            margin-bottom: 20px;
-            font-size: 1.3em;
-            color: #0a6b0a;
+            margin-bottom: 10px;
+            font-size: 1.1em;
+            color: #00bcd4;
             font-weight: bold;
         }
 
         .product-contact {
             display: flex;
-            gap: 10px;
+            gap: 5px;
         }
 
         .btn-contact {
             flex: 1;
-            padding: 12px;
-            background: linear-gradient(135deg, #0a4d0a 0%, #063006 100%);
+            padding: 8px;
+            background: linear-gradient(135deg, #00bcd4 0%, #008ba3 100%);
             color: white;
             text-decoration: none;
             text-align: center;
-            border-radius: 8px;
+            border-radius: 6px;
             font-weight: bold;
             transition: transform 0.3s;
+            font-size: 0.9em;
         }
 
         .btn-whatsapp {
             flex: 1;
-            padding: 12px;
+            padding: 8px;
             background: linear-gradient(135deg, #25D366 0%, #128C7E 100%);
             color: white;
             text-decoration: none;
             text-align: center;
-            border-radius: 8px;
+            border-radius: 6px;
             font-weight: bold;
             transition: transform 0.3s;
+            font-size: 0.9em;
         }
 
         .btn-contact:hover, .btn-whatsapp:hover {
@@ -230,22 +340,22 @@
         .barcode-section {
             text-align: center;
             padding: 30px;
-            background: linear-gradient(135deg, #1a1a1a 0%, #0d0d0d 100%);
+            background: linear-gradient(135deg, #ffffff 0%, #f0f8ff 100%);
             margin-top: 20px;
         }
 
         .barcode-section h3 {
-            color: #0a6b0a;
+            color: #00bcd4;
             margin-bottom: 20px;
             font-size: 1.3em;
-            text-shadow: 0 0 10px rgba(10, 107, 10, 0.3);
+            text-shadow: 0 0 10px rgba(0, 188, 212, 0.3);
         }
 
         .barcode-container {
             display: inline-block;
             padding: 20px;
-            background: linear-gradient(135deg, #1a1a1a 0%, #0d0d0d 100%);
-            border: 2px solid #0a6b0a;
+            background: linear-gradient(135deg, #ffffff 0%, #f0f8ff 100%);
+            border: 2px solid #00bcd4;
             border-radius: 10px;
         }
 
@@ -289,24 +399,24 @@
         }
 
         footer {
-            background: linear-gradient(135deg, #0a0a0a 0%, #000000 100%);
+            background: linear-gradient(135deg, #00bcd4 0%, #008ba3 100%);
             padding: 20px;
             text-align: center;
-            color: #a0a0a0;
-            border-top: 1px solid #1a3d17;
+            color: #ffffff;
+            border-top: 1px solid #00bcd4;
         }
 
         .contact-section {
             padding: 40px;
-            background: linear-gradient(135deg, #1a1a1a 0%, #0d0d0d 100%);
+            background: linear-gradient(135deg, #ffffff 0%, #f0f8ff 100%);
         }
 
         .contact-section h2 {
             text-align: center;
-            color: #0a6b0a;
+            color: #00bcd4;
             margin-bottom: 30px;
             font-size: 2em;
-            text-shadow: 0 0 10px rgba(10, 107, 10, 0.3);
+            text-shadow: 0 0 10px rgba(0, 188, 212, 0.3);
         }
 
         .contact-info {
@@ -317,39 +427,39 @@
         }
 
         .contact-item {
-            background: linear-gradient(135deg, #1a1a1a 0%, #0d0d0d 100%);
+            background: linear-gradient(135deg, #ffffff 0%, #f0f8ff 100%);
             padding: 20px;
             border-radius: 10px;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+            box-shadow: 0 5px 15px rgba(0, 188, 212, 0.15);
             text-align: center;
-            border: 1px solid #1a3d17;
+            border: 1px solid #00bcd4;
         }
 
         .contact-item h3 {
-            color: #0a6b0a;
+            color: #00bcd4;
             margin-bottom: 15px;
             font-size: 1.3em;
         }
 
         .contact-item p {
-            color: #b0b0b0;
+            color: #555555;
             font-size: 1.1em;
         }
 
         .payment-methods {
-            background: linear-gradient(135deg, #1a1a1a 0%, #0d0d0d 100%);
+            background: linear-gradient(135deg, #ffffff 0%, #f0f8ff 100%);
             padding: 30px;
             border-radius: 10px;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.3);
-            border: 1px solid #1a3d17;
+            box-shadow: 0 5px 15px rgba(0, 188, 212, 0.15);
+            border: 1px solid #00bcd4;
         }
 
         .payment-methods h3 {
-            color: #0a6b0a;
+            color: #00bcd4;
             margin-bottom: 20px;
             font-size: 1.5em;
             text-align: center;
-            text-shadow: 0 0 10px rgba(10, 107, 10, 0.3);
+            text-shadow: 0 0 10px rgba(0, 188, 212, 0.3);
         }
 
         .payment-options {
@@ -364,7 +474,7 @@
             align-items: center;
             gap: 10px;
             padding: 15px 25px;
-            background: linear-gradient(135deg, #0a4d0a 0%, #063006 100%);
+            background: linear-gradient(135deg, #00bcd4 0%, #008ba3 100%);
             color: white;
             border-radius: 50px;
             font-size: 1.1em;
@@ -375,21 +485,386 @@
         }
 
         @media (max-width: 768px) {
-            .product {
-                padding: 20px;
-                gap: 20px;
+            body {
+                padding: 2px;
+            }
+
+            .container {
+                margin: 2px;
+                max-width: calc(100% - 4px);
+                border-radius: 5px;
+            }
+
+            header {
+                padding: 5px;
             }
 
             header h1 {
-                font-size: 2em;
+                font-size: 1.2em;
+                position: static;
+                margin: 5px 0 3px 0;
+                text-align: center;
             }
 
-            .product-name {
+            .logo {
+                max-width: 60px;
+                margin: 0 auto;
+                display: block;
+            }
+
+            .menu-container {
+                position: static;
+                margin-bottom: 5px;
+                width: 100%;
+            }
+
+            .menu-button {
+                width: 100%;
+                padding: 5px 10px;
+                font-size: 0.8em;
+            }
+
+            .menu-dropdown {
+                width: 100%;
+                min-width: auto;
+                border-radius: 5px;
+            }
+
+            .header-phone {
+                flex-direction: column;
+                gap: 3px;
+                margin-bottom: 3px;
+            }
+
+            .header-phone a {
+                padding: 3px 8px;
+                font-size: 0.75em;
+            }
+
+            .products-section {
+                padding: 5px;
+            }
+
+            .products-section h2 {
+                font-size: 1.2em;
+                margin-bottom: 5px;
+            }
+
+            .products-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 5px;
+            }
+
+            .product-card {
+                border-radius: 5px;
+            }
+
+            .product-card .product-image {
+                height: 100px;
+            }
+
+            .product-details {
+                padding: 5px;
+            }
+
+            .product-details h3 {
+                font-size: 0.9em;
+                margin-bottom: 3px;
+            }
+
+            .product-size {
+                font-size: 0.75em;
+                margin-bottom: 3px;
+            }
+
+            .product-features li {
+                font-size: 0.65em;
+                padding: 2px 0;
+            }
+
+            .product-price {
+                font-size: 0.9em;
+                margin-bottom: 5px;
+            }
+
+            .product-contact {
+                flex-direction: column;
+                gap: 3px;
+            }
+
+            .btn-contact,
+            .btn-whatsapp {
+                padding: 4px;
+                font-size: 0.75em;
+            }
+
+            .image-selector {
+                flex-wrap: wrap;
+                padding: 3px;
+                gap: 2px;
+            }
+
+            .image-selector button {
+                width: 25px;
+                height: 25px;
+            }
+
+            .contact-section {
+                padding: 5px;
+            }
+
+            .contact-section h2 {
+                font-size: 1.2em;
+                margin-bottom: 5px;
+            }
+
+            .contact-info {
+                grid-template-columns: 1fr;
+                gap: 5px;
+            }
+
+            .contact-item {
+                padding: 5px;
+            }
+
+            .contact-item h3 {
+                font-size: 0.9em;
+            }
+
+            .contact-item p {
+                font-size: 0.75em;
+            }
+
+            .payment-methods {
+                padding: 5px;
+            }
+
+            .payment-methods h3 {
+                font-size: 1em;
+                margin-bottom: 5px;
+            }
+
+            .payment-options {
+                gap: 5px;
+            }
+
+            .payment-option {
+                padding: 5px 10px;
+                font-size: 0.75em;
+            }
+
+            footer {
+                padding: 5px;
+            }
+
+            .footer-supplier {
+                font-size: 0.7em;
+            }
+        }
+
+        @media (max-width: 768px) and (orientation: landscape) {
+            body {
+                min-height: 100vh;
+                overflow-x: auto;
+            }
+
+            .container {
+                width: 100%;
+                min-width: 600px;
+                margin: 0;
+                border-radius: 0;
+            }
+
+            header {
+                padding: 15px 20px;
+                display: flex;
+                flex-direction: row;
+                justify-content: space-between;
+                align-items: center;
+                gap: 15px;
+            }
+
+            header h1 {
+                font-size: 1.6em;
+                position: static;
+                margin: 0;
+                text-align: left;
+                white-space: nowrap;
+            }
+
+            .logo {
+                max-width: 100px;
+                margin: 0;
+            }
+
+            .menu-container {
+                position: static;
+                margin: 0;
+                width: auto;
+            }
+
+            .menu-button {
+                padding: 8px 15px;
+                font-size: 0.9em;
+            }
+
+            .menu-dropdown {
+                width: 200px;
+                min-width: 200px;
+                border-radius: 8px;
+            }
+
+            .header-phone {
+                flex-direction: row;
+                gap: 10px;
+                margin: 0;
+            }
+
+            .header-phone a {
+                padding: 6px 12px;
+                font-size: 0.9em;
+            }
+
+            .products-section {
+                padding: 20px;
+            }
+
+            .products-section h2 {
+                font-size: 1.5em;
+                margin-bottom: 20px;
+            }
+
+            .products-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 15px;
+            }
+
+            .product-card {
+                border-radius: 10px;
+            }
+
+            .product-card .product-image {
+                height: 180px;
+            }
+
+            .product-details {
+                padding: 12px;
+            }
+
+            .product-details h3 {
+                font-size: 1.2em;
+                margin-bottom: 8px;
+            }
+
+            .product-size {
+                font-size: 0.9em;
+                margin-bottom: 8px;
+            }
+
+            .product-features li {
+                font-size: 0.85em;
+                padding: 4px 0;
+            }
+
+            .product-price {
+                font-size: 1.1em;
+                margin-bottom: 12px;
+            }
+
+            .product-contact {
+                flex-direction: row;
+                gap: 8px;
+            }
+
+            .btn-contact,
+            .btn-whatsapp {
+                padding: 8px;
+                font-size: 0.9em;
+            }
+
+            .image-selector {
+                flex-wrap: nowrap;
+                padding: 6px;
+                gap: 4px;
+                overflow-x: auto;
+            }
+
+            .image-selector button {
+                width: 40px;
+                height: 40px;
+                flex-shrink: 0;
+            }
+
+            .contact-section {
+                padding: 20px;
+            }
+
+            .contact-section h2 {
+                font-size: 1.5em;
+                margin-bottom: 15px;
+            }
+
+            .contact-info {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 15px;
+            }
+
+            .contact-item {
+                padding: 12px;
+            }
+
+            .contact-item h3 {
+                font-size: 1.1em;
+            }
+
+            .contact-item p {
+                font-size: 0.95em;
+            }
+
+            .payment-methods {
+                padding: 15px 20px;
+            }
+
+            .payment-methods h3 {
+                font-size: 1.2em;
+                margin-bottom: 12px;
+            }
+
+            .payment-options {
+                gap: 12px;
+            }
+
+            .payment-option {
+                padding: 10px 18px;
+                font-size: 0.95em;
+            }
+
+            footer {
+                padding: 12px;
+            }
+
+            .footer-supplier {
+                font-size: 0.85em;
+            }
+        }
+
+        @media (max-width: 480px) {
+            header h1 {
                 font-size: 1.5em;
             }
 
-            .price {
-                font-size: 2em;
+            .products-section h2,
+            .contact-section h2 {
+                font-size: 1.4em;
+            }
+
+            .product-details h3 {
+                font-size: 1.2em;
+            }
+
+            .image-selector button {
+                width: 40px;
+                height: 40px;
             }
         }
     </style>
@@ -397,12 +872,22 @@
 <body>
     <div class="container">
         <header>
+            <div class="menu-container">
+                <button class="menu-button">قائمة المنتجات</button>
+                <div class="menu-dropdown">
+                    <a href="#products">مزيل دهون</a>
+                    <a href="#products">زاهي</a>
+                    <a href="#products">ملمع فافون</a>
+                    <a href="#products">شامبو ملابس</a>
+                    <a href="#dish-wash">سوبر وايت باور جلي</a>
+                </div>
+            </div>
             <div class="header-phone">
                 <a href="tel:07712281072">📞 0771-228-1072</a>
                 <a href="https://wa.me/+9647712281072">💬 واتساب</a>
             </div>
-            <img src="images/WhatsApp Image 2026-02-06 at 1.07.36 AM.jpeg" alt="سوبر ذهب" class="logo">
-            <h1>سوبر ذهب</h1>
+            <img src="images/WhatsApp Image 2026-03-02 at 12.30.48 AM.jpeg" alt="سوبر وايت" class="logo">
+            <h1>سوبر وايت</h1>
         </header>
 
         <div class="products-section">
@@ -410,92 +895,251 @@
             <div class="products-grid">
                 <div class="product-card">
                     <div class="product-image">
-                        <img src="https://picsum.photos/seed/product1/400/300" alt="مزيل دهون">
+                        <img id="liquid-soap-image-1" src="images/صابون سائل/WhatsApp Image 2026-03-02 at 1.49.07 AM.jpeg" alt="سائل غسيل" onclick="openModal(this.src)" style="cursor: pointer;">
                     </div>
                     <div class="product-details">
-                        <h3>مزيل دهون</h3>
+                        <h3>سائل غسيل</h3>
+                        <p class="product-size">متوفر بأحجام متعددة</p>
+                        <div class="product-features">
+                            <ul>
+                                <li>صابون سائل لطيف على اليدين</li>
+                                <li>ينظف بفعالية ويحافظ على نعومة البشرة</li>
+                                <li>رائحة منعشة تدوم طويلاً</li>
+                                <li>مناسب للاستخدام اليومي</li>
+                            </ul>
+                        </div>
+                        <div class="product-price">
+                            <span class="price-label">السعر:</span>
+                            <span class="price-value">قريباً</span>
+                        </div>
+                        <div class="product-contact">
+                            <a href="tel:07712281072" class="btn-contact">📞 اتصل</a>
+                            <a href="https://wa.me/+9647712281072" class="btn-whatsapp">💬 واتساب</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <div class="product-image">
+                        <img id="green-gel-image-1" src="images/الجل الاخضر/WhatsApp Image 2026-03-02 at 1.55.42 AM.jpeg" alt="الجل الأخضر" onclick="openModal(this.src)" style="cursor: pointer;">
+                    </div>
+                    <div class="product-details">
+                        <h3>الجل الأخضر</h3>
+                        <p class="product-size">متوفر بأحجام متعددة</p>
+                        <div class="product-features">
+                            <ul>
+                                <li>جل تنظيف مركز بفعالية عالية لإزالة الدهون والأوساخ الصعبة</li>
+                                <li>مناسب للمطابخ والحمامات</li>
+                                <li>كمية قليلة تعطي نتيجة قوية</li>
+                                <li>يترك نظافة واضحة ولمعان</li>
+                            </ul>
+                        </div>
+                        <div class="product-price">
+                            <span class="price-label">السعر:</span>
+                            <span class="price-value">قريباً</span>
+                        </div>
+                        <div class="product-contact">
+                            <a href="tel:07712281072" class="btn-contact">📞 اتصل</a>
+                            <a href="https://wa.me/+9647712281072" class="btn-whatsapp">💬 واتساب</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <div class="product-image">
+                        <img id="chlorine-image-1" src="images/الكلور الابيض/WhatsApp Image 2026-03-02 at 1.58.34 AM.jpeg" alt="الكلور الأبيض" onclick="openModal(this.src)" style="cursor: pointer;">
+                    </div>
+                    <div class="product-details">
+                        <h3>الكلور الأبيض</h3>
+                        <p class="product-size">متوفر بأحجام متعددة</p>
+                        <div class="product-features">
+                            <ul>
+                                <li>كلور مبيض قوي للتعقيم وإزالة البقع</li>
+                                <li>يزيل الاصفرار</li>
+                                <li>يعقم الأسطح والحمامات</li>
+                                <li>يمنح بياض ولمعان واضح</li>
+                            </ul>
+                        </div>
+                        <div class="product-price">
+                            <span class="price-label">السعر:</span>
+                            <span class="price-value">قريباً</span>
+                        </div>
+                        <div class="product-contact">
+                            <a href="tel:07712281072" class="btn-contact">📞 اتصل</a>
+                            <a href="https://wa.me/+9647712281072" class="btn-whatsapp">💬 واتساب</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <div class="product-image">
+                        <img id="flash-image-1" src="images/فلاش/WhatsApp Image 2026-03-02 at 2.01.27 AM.jpeg" alt="فلاش" onclick="openModal(this.src)" style="cursor: pointer;">
+                    </div>
+                    <div class="product-details">
+                        <h3>فلاش</h3>
+                        <p class="product-size">متوفر بأحجام متعددة</p>
+                        <div class="product-features">
+                            <ul>
+                                <li>منظف حمامات فعال لإزالة الترسبات والكلس بسرعة</li>
+                                <li>يقضي على الروائح</li>
+                                <li>يزيل البقع الصعبة</li>
+                                <li>يترك لمعان ونظافة واضحة</li>
+                            </ul>
+                        </div>
+                        <div class="product-price">
+                            <span class="price-label">السعر:</span>
+                            <span class="price-value">قريباً</span>
+                        </div>
+                        <div class="product-contact">
+                            <a href="tel:07712281072" class="btn-contact">📞 اتصل</a>
+                            <a href="https://wa.me/+9647712281072" class="btn-whatsapp">💬 واتساب</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <div class="product-image">
+                        <img id="washing-image-1" src="images/مسحوق غسيل/WhatsApp Image 2026-03-02 at 1.44.12 AM.jpeg" alt="مسحوق وسائل الغسيل" onclick="openModal(this.src)" style="cursor: pointer;">
+                    </div>
+                    <div class="image-selector">
+                        <button class="active" onclick="changeWashingImage(1)"><img src="images/مسحوق غسيل/WhatsApp Image 2026-03-02 at 1.44.12 AM.jpeg" alt="صورة 1" onclick="event.stopPropagation(); openModal('images/مسحوق غسيل/WhatsApp Image 2026-03-02 at 1.44.12 AM.jpeg')"></button>
+                        <button onclick="changeWashingImage(2)"><img src="images/مسحوق غسيل/WhatsApp Image 2026-03-02 at 1.44.12 AM (1).jpeg" alt="صورة 2" onclick="event.stopPropagation(); openModal('images/مسحوق غسيل/WhatsApp Image 2026-03-02 at 1.44.12 AM (1).jpeg')"></button>
+                        <button onclick="changeWashingImage(3)"><img src="images/مسحوق غسيل/WhatsApp Image 2026-03-02 at 1.44.13 AM.jpeg" alt="صورة 3" onclick="event.stopPropagation(); openModal('images/مسحوق غسيل/WhatsApp Image 2026-03-02 at 1.44.13 AM.jpeg')"></button>
+                        <button onclick="changeWashingImage(4)"><img src="images/مسحوق غسيل/WhatsApp Image 2026-03-02 at 1.44.13 AM (1).jpeg" alt="صورة 4" onclick="event.stopPropagation(); openModal('images/مسحوق غسيل/WhatsApp Image 2026-03-02 at 1.44.13 AM (1).jpeg')"></button>
+                    </div>
+                    <div class="product-details">
+                        <h3>مسحوق وسائل الغسيل</h3>
+                        <p class="product-size">متوفر بأحجام متعددة</p>
+                        <div class="product-features">
+                            <ul>
+                                <li>تركيبة متطورة توفر تنظيف عميق وإزالة فعالة للبقع الصعبة</li>
+                                <li>سائل مخصص للغسالات الأوتوماتيك برغوة متوازنة تحافظ على كفاءة الغسالة</li>
+                                <li>مسحوق فعال للغسالات العادية يمنح نظافة قوية وانتعاش يدوم</li>
+                                <li>نتائج واضحة من أول غسلة مع رائحة منعشة تدوم طويلاً</li>
+                            </ul>
+                        </div>
+                        <div class="product-price">
+                            <span class="price-label">السعر:</span>
+                            <span class="price-value">قريباً</span>
+                        </div>
+                        <div class="product-contact">
+                            <a href="tel:07712281072" class="btn-contact">📞 اتصل</a>
+                            <a href="https://wa.me/+9647712281072" class="btn-whatsapp">💬 واتساب</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <div class="product-image">
+                        <img id="zahi-image-1" src="images/زاهي الصحون/WhatsApp Image 2026-03-02 at 1.19.01 AM.jpeg" alt="زاهي الصحون" onclick="openModal(this.src)" style="cursor: pointer;">
+                    </div>
+                    <div class="image-selector">
+                        <button class="active" onclick="changeZahiImage(1)"><img src="images/زاهي الصحون/WhatsApp Image 2026-03-02 at 1.19.01 AM.jpeg" alt="صورة 1" onclick="event.stopPropagation(); openModal('images/زاهي الصحون/WhatsApp Image 2026-03-02 at 1.19.01 AM.jpeg')"></button>
+                        <button onclick="changeZahiImage(2)"><img src="images/زاهي الصحون/WhatsApp Image 2026-03-02 at 1.19.01 AM (1).jpeg" alt="صورة 2" onclick="event.stopPropagation(); openModal('images/زاهي الصحون/WhatsApp Image 2026-03-02 at 1.19.01 AM (1).jpeg')"></button>
+                        <button onclick="changeZahiImage(3)"><img src="images/زاهي الصحون/WhatsApp Image 2026-03-02 at 1.19.02 AM.jpeg" alt="صورة 3" onclick="event.stopPropagation(); openModal('images/زاهي الصحون/WhatsApp Image 2026-03-02 at 1.19.02 AM.jpeg')"></button>
+                        <button onclick="changeZahiImage(4)"><img src="images/زاهي الصحون/WhatsApp Image 2026-03-02 at 1.19.02 AM (1).jpeg" alt="صورة 4" onclick="event.stopPropagation(); openModal('images/زاهي الصحون/WhatsApp Image 2026-03-02 at 1.19.02 AM (1).jpeg')"></button>
+                    </div>
+                    <div class="product-details">
+                        <h3>زاهي الصحون</h3>
                         <p class="product-size">الحجم: 750 مل</p>
                         <div class="product-features">
                             <ul>
-                                <li>يزيل الدهون بفعالية عالية</li>
-                                <li>مناسب لجميع الأسطح</li>
+                                <li>تركيبة فعالة تعيد للصحون لمعانها الطبيعي وتحافظ على بريقها بعد كل غسلة</li>
+                                <li>يزيل آثار الدهون بسهولة</li>
+                                <li>يمنح لمعان واضح</li>
+                                <li>مناسب للاستخدام اليومي</li>
+                                <li>اختيار مثالي لصحون نظيفة ولامعة كل يوم ✨</li>
+                            </ul>
+                        </div>
+                        <div class="product-price">
+                            <span class="price-label">السعر:</span>
+                            <span class="price-value">قريباً</span>
+                        </div>
+                        <div class="product-contact">
+                            <a href="tel:07712281072" class="btn-contact">📞 اتصل</a>
+                            <a href="https://wa.me/+9647712281072" class="btn-whatsapp">💬 واتساب</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <div class="product-image">
+                        <img id="dish-image-1" src="images/ساىل جلي/WhatsApp Image 2026-03-02 at 12.41.39 AM.jpeg" alt="سوبر وايت باور جلي" onclick="openModal(this.src)" style="cursor: pointer;">
+                    </div>
+                    <div class="image-selector">
+                        <button class="active" onclick="changeDishImage(1)"><img src="images/ساىل جلي/WhatsApp Image 2026-03-02 at 12.41.39 AM.jpeg" alt="صورة 1" onclick="event.stopPropagation(); openModal('images/ساىل جلي/WhatsApp Image 2026-03-02 at 12.41.39 AM.jpeg')"></button>
+                        <button onclick="changeDishImage(2)"><img src="images/ساىل جلي/WhatsApp Image 2026-03-02 at 12.41.39 AM (1).jpeg" alt="صورة 2" onclick="event.stopPropagation(); openModal('images/ساىل جلي/WhatsApp Image 2026-03-02 at 12.41.39 AM (1).jpeg')"></button>
+                        <button onclick="changeDishImage(3)"><img src="images/ساىل جلي/WhatsApp Image 2026-03-02 at 12.41.39 AM (2).jpeg" alt="صورة 3" onclick="event.stopPropagation(); openModal('images/ساىل جلي/WhatsApp Image 2026-03-02 at 12.41.39 AM (2).jpeg')"></button>
+                        <button onclick="changeDishImage(4)"><img src="images/ساىل جلي/WhatsApp Image 2026-03-02 at 12.41.40 AM.jpeg" alt="صورة 4" onclick="event.stopPropagation(); openModal('images/ساىل جلي/WhatsApp Image 2026-03-02 at 12.41.40 AM.jpeg')"></button>
+                        <button onclick="changeDishImage(5)"><img src="images/ساىل جلي/WhatsApp Image 2026-03-02 at 12.41.40 AM (1).jpeg" alt="صورة 5" onclick="event.stopPropagation(); openModal('images/ساىل جلي/WhatsApp Image 2026-03-02 at 12.41.40 AM (1).jpeg')"></button>
+                        <button onclick="changeDishImage(6)"><img src="images/ساىل جلي/WhatsApp Image 2026-03-02 at 12.41.40 AM (2).jpeg" alt="صورة 6" onclick="event.stopPropagation(); openModal('images/ساىل جلي/WhatsApp Image 2026-03-02 at 12.41.40 AM (2).jpeg')"></button>
+                        <button onclick="changeDishImage(7)"><img src="images/ساىل جلي/WhatsApp Image 2026-03-02 at 12.41.41 AM.jpeg" alt="صورة 7" onclick="event.stopPropagation(); openModal('images/ساىل جلي/WhatsApp Image 2026-03-02 at 12.41.41 AM.jpeg')"></button>
+                        <button onclick="changeDishImage(8)"><img src="images/ساىل جلي/WhatsApp Image 2026-03-02 at 12.41.41 AM (1).jpeg" alt="صورة 8" onclick="event.stopPropagation(); openModal('images/ساىل جلي/WhatsApp Image 2026-03-02 at 12.41.41 AM (1).jpeg')"></button>
+                        <button onclick="changeDishImage(9)"><img src="images/ساىل جلي/WhatsApp Image 2026-03-02 at 12.41.41 AM (2).jpeg" alt="صورة 9" onclick="event.stopPropagation(); openModal('images/ساىل جلي/WhatsApp Image 2026-03-02 at 12.41.41 AM (2).jpeg')"></button>
+                        <button onclick="changeDishImage(10)"><img src="images/ساىل جلي/WhatsApp Image 2026-03-02 at 12.41.42 AM.jpeg" alt="صورة 10" onclick="event.stopPropagation(); openModal('images/ساىل جلي/WhatsApp Image 2026-03-02 at 12.41.42 AM.jpeg')"></button>
+                        <button onclick="changeDishImage(11)"><img src="images/ساىل جلي/WhatsApp Image 2026-03-02 at 12.41.42 AM (1).jpeg" alt="صورة 11" onclick="event.stopPropagation(); openModal('images/ساىل جلي/WhatsApp Image 2026-03-02 at 12.41.42 AM (1).jpeg')"></button>
+                        <button onclick="changeDishImage(12)"><img src="images/ساىل جلي/WhatsApp Image 2026-03-02 at 12.41.42 AM (2).jpeg" alt="صورة 12" onclick="event.stopPropagation(); openModal('images/ساىل جلي/WhatsApp Image 2026-03-02 at 12.41.42 AM (2).jpeg')"></button>
+                    </div>
+                    <div class="product-details">
+                        <h3>سوبر وايت باور جلي</h3>
+                        <p class="product-size">الحجم: 750 مل</p>
+                        <div class="product-features">
+                            <ul>
+                                <li>يزيل الدهون بسرعة</li>
+                                <li>يمنح الصحون لمعان واضح</li>
+                                <li>برغوة كثيفة</li>
+                                <li>روائح منعشة متعددة</li>
+                            </ul>
+                        </div>
+                        <div class="product-price">
+                            <span class="price-label">السعر:</span>
+                            <span class="price-value">قريباً</span>
+                        </div>
+                        <div class="product-contact">
+                            <a href="tel:07712281072" class="btn-contact">📞 اتصل</a>
+                            <a href="https://wa.me/+9647712281072" class="btn-whatsapp">💬 واتساب</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <div class="product-image">
+                        <img id="cleaner-image-1" src="images/منظف عام/WhatsApp Image 2026-03-02 at 12.47.24 AM.jpeg" alt="منظف عام ومعطر" onclick="openModal(this.src)" style="cursor: pointer;">
+                    </div>
+                    <div class="image-selector">
+                        <button class="active" onclick="changeCleanerImage(1)"><img src="images/منظف عام/WhatsApp Image 2026-03-02 at 12.47.24 AM.jpeg" alt="صورة 1" onclick="event.stopPropagation(); openModal('images/منظف عام/WhatsApp Image 2026-03-02 at 12.47.24 AM.jpeg')"></button>
+                        <button onclick="changeCleanerImage(2)"><img src="images/منظف عام/WhatsApp Image 2026-03-02 at 12.47.25 AM (1).jpeg" alt="صورة 2" onclick="event.stopPropagation(); openModal('images/منظف عام/WhatsApp Image 2026-03-02 at 12.47.25 AM (1).jpeg')"></button>
+                        <button onclick="changeCleanerImage(3)"><img src="images/منظف عام/WhatsApp Image 2026-03-02 at 12.47.25 AM (2).jpeg" alt="صورة 3" onclick="event.stopPropagation(); openModal('images/منظف عام/WhatsApp Image 2026-03-02 at 12.47.25 AM (2).jpeg')"></button>
+                        <button onclick="changeCleanerImage(4)"><img src="images/منظف عام/WhatsApp Image 2026-03-02 at 12.47.25 AM (3).jpeg" alt="صورة 4" onclick="event.stopPropagation(); openModal('images/منظف عام/WhatsApp Image 2026-03-02 at 12.47.25 AM (3).jpeg')"></button>
+                        <button onclick="changeCleanerImage(5)"><img src="images/منظف عام/WhatsApp Image 2026-03-02 at 12.47.25 AM.jpeg" alt="صورة 5" onclick="event.stopPropagation(); openModal('images/منظف عام/WhatsApp Image 2026-03-02 at 12.47.25 AM.jpeg')"></button>
+                        <button onclick="changeCleanerImage(6)"><img src="images/منظف عام/WhatsApp Image 2026-03-02 at 12.47.26 AM.jpeg" alt="صورة 6" onclick="event.stopPropagation(); openModal('images/منظف عام/WhatsApp Image 2026-03-02 at 12.47.26 AM.jpeg')"></button>
+                    </div>
+                    <div class="product-details">
+                        <h3>منظف عام ومعطر</h3>
+                        <p class="product-size">الحجم: 750 مل</p>
+                        <div class="product-features">
+                            <ul>
+                                <li>منظف متعدد الاستخدامات للأسطح والأرضيات</li>
+                                <li>يعقم وينظف ويترك رائحة تدوم لساعات</li>
+                                <li>آمن على جميع الأسطح</li>
+                                <li>فعال وقوي</li>
+                            </ul>
+                        </div>
+                        <div class="product-price">
+                            <span class="price-label">السعر:</span>
+                            <span class="price-value">قريباً</span>
+                        </div>
+                        <div class="product-contact">
+                            <a href="tel:07712281072" class="btn-contact">📞 اتصل</a>
+                            <a href="https://wa.me/+9647712281072" class="btn-whatsapp">💬 واتساب</a>
+                        </div>
+                    </div>
+                <div class="product-card">
+                    <div class="product-image">
+                        <img id="powder-image-1" src="images/معجون للجلي/WhatsApp Image 2026-03-02 at 1.12.30 AM.jpeg" alt="معجون للجلي" onclick="openModal(this.src)" style="cursor: pointer;">
+                    </div>
+                    <div class="product-details">
+                        <h3>معجون للجلي</h3>
+                        <p class="product-size">الحجم: 500 غرام</p>
+                        <div class="product-features">
+                            <ul>
+                                <li>معجون تنظيف مركز يزيل الدهون الصعبة والبقع المتراكمة بسهولة وفعالية عالية</li>
+                                <li>فعال وقوي</li>
                                 <li>آمن على اليدين</li>
-                                <li>رائحة منعشة</li>
-                            </ul>
-                        </div>
-                        <div class="product-price">
-                            <span class="price-label">السعر:</span>
-                            <span class="price-value">قريباً</span>
-                        </div>
-                        <div class="product-contact">
-                            <a href="tel:07712281072" class="btn-contact">📞 اتصل</a>
-                            <a href="https://wa.me/+9647712281072" class="btn-whatsapp">💬 واتساب</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="product-card">
-                    <div class="product-image">
-                        <img src="https://picsum.photos/seed/product2/400/300" alt="زاهي">
-                    </div>
-                    <div class="product-details">
-                        <h3>زاهي</h3>
-                        <p class="product-size">الحجم: 900 مل</p>
-                        <div class="product-features">
-                            <ul>
-                                <li>تنظيف عميق وفعال</li>
-                                <li>رائحة منعشة</li>
-                                <li>مناسب لجميع أنواع الأقمشة</li>
-                                <li>يحافظ على لون الملابس</li>
-                            </ul>
-                        </div>
-                        <div class="product-price">
-                            <span class="price-label">السعر:</span>
-                            <span class="price-value">قريباً</span>
-                        </div>
-                        <div class="product-contact">
-                            <a href="tel:07712281072" class="btn-contact">📞 اتصل</a>
-                            <a href="https://wa.me/+9647712281072" class="btn-whatsapp">💬 واتساب</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="product-card">
-                    <div class="product-image">
-                        <img src="https://picsum.photos/seed/product3/400/300" alt="ملمع فافون">
-                    </div>
-                    <div class="product-details">
-                        <h3>ملمع فافون</h3>
-                        <p class="product-size">الحجم: 700 مل</p>
-                        <div class="product-features">
-                            <ul>
                                 <li>يعطي لمعاناً استثنائياً</li>
-                                <li>يزيل الخدوش البسيطة</li>
-                                <li>يحمي من التلف</li>
-                                <li>يحافظ على بريق الاستيل</li>
-                            </ul>
-                        </div>
-                        <div class="product-price">
-                            <span class="price-label">السعر:</span>
-                            <span class="price-value">قريباً</span>
-                        </div>
-                        <div class="product-contact">
-                            <a href="tel:07712281072" class="btn-contact">📞 اتصل</a>
-                            <a href="https://wa.me/+9647712281072" class="btn-whatsapp">💬 واتساب</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="product-card">
-                    <div class="product-image">
-                        <img src="https://picsum.photos/seed/product4/400/300" alt="شامبو ملابس">
-                    </div>
-                    <div class="product-details">
-                        <h3>شامبو ملابس</h3>
-                        <p class="product-size">الحجم: 4.5 لتر</p>
-                        <div class="product-features">
-                            <ul>
-                                <li>ينظف الملابس بعمق</li>
-                                <li>يمنع تغير لون الملابس</li>
-                                <li>رائحة منعشة تدوم طويلاً</li>
-                                <li>مناسب للغسيل اليدوي والآلي</li>
                             </ul>
                         </div>
                         <div class="product-price">
@@ -551,6 +1195,231 @@
             <p>جميع الحقوق محفوظة © 2024</p>
             <p class="footer-supplier">المصدر: استاذ رواد</p>
         </footer>
+
+        <div id="imageModal" class="modal">
+            <span class="close" onclick="closeModal()">&times;</span>
+            <img class="modal-content" id="modalImage">
+        </div>
     </div>
+
+    <script>
+        function openModal(imageSrc) {
+            const modal = document.getElementById('imageModal');
+            const modalImg = document.getElementById('modalImage');
+            modal.style.display = 'flex';
+            modalImg.src = imageSrc;
+        }
+
+        function closeModal() {
+            const modal = document.getElementById('imageModal');
+            modal.style.display = 'none';
+        }
+
+        // Close modal when clicking outside the image
+        window.onclick = function(event) {
+            const modal = document.getElementById('imageModal');
+            if (event.target == modal) {
+                modal.style.display = 'none';
+            }
+        }
+
+        function changeDishImage(imageNum) {
+            const dishImages = [
+                'images/ساىل جلي/WhatsApp Image 2026-03-02 at 12.41.39 AM.jpeg',
+                'images/ساىل جلي/WhatsApp Image 2026-03-02 at 12.41.39 AM (1).jpeg',
+                'images/ساىل جلي/WhatsApp Image 2026-03-02 at 12.41.39 AM (2).jpeg',
+                'images/ساىل جلي/WhatsApp Image 2026-03-02 at 12.41.40 AM.jpeg',
+                'images/ساىل جلي/WhatsApp Image 2026-03-02 at 12.41.40 AM (1).jpeg',
+                'images/ساىل جلي/WhatsApp Image 2026-03-02 at 12.41.40 AM (2).jpeg',
+                'images/ساىل جلي/WhatsApp Image 2026-03-02 at 12.41.41 AM.jpeg',
+                'images/ساىل جلي/WhatsApp Image 2026-03-02 at 12.41.41 AM (1).jpeg',
+                'images/ساىل جلي/WhatsApp Image 2026-03-02 at 12.41.41 AM (2).jpeg',
+                'images/ساىل جلي/WhatsApp Image 2026-03-02 at 12.41.42 AM.jpeg',
+                'images/ساىل جلي/WhatsApp Image 2026-03-02 at 12.41.42 AM (1).jpeg',
+                'images/ساىل جلي/WhatsApp Image 2026-03-02 at 12.41.42 AM (2).jpeg'
+            ];
+            
+            const mainImage = document.getElementById('dish-image-1');
+            const buttons = document.querySelectorAll('.image-selector button');
+            
+            // Change main image
+            mainImage.style.opacity = '0';
+            setTimeout(() => {
+                mainImage.src = dishImages[imageNum - 1];
+                mainImage.style.opacity = '1';
+            }, 150);
+            
+            // Update active button
+            buttons.forEach((btn, index) => {
+                if (index === imageNum - 1) {
+                    btn.classList.add('active');
+                } else {
+                    btn.classList.remove('active');
+                }
+            });
+        }
+
+        function changeCleanerImage(imageNum) {
+            const cleanerImages = [
+                'images/منظف عام/WhatsApp Image 2026-03-02 at 12.47.24 AM.jpeg',
+                'images/منظف عام/WhatsApp Image 2026-03-02 at 12.47.25 AM (1).jpeg',
+                'images/منظف عام/WhatsApp Image 2026-03-02 at 12.47.25 AM (2).jpeg',
+                'images/منظف عام/WhatsApp Image 2026-03-02 at 12.47.25 AM (3).jpeg',
+                'images/منظف عام/WhatsApp Image 2026-03-02 at 12.47.25 AM.jpeg',
+                'images/منظف عام/WhatsApp Image 2026-03-02 at 12.47.26 AM.jpeg'
+            ];
+
+            const mainImage = document.getElementById('cleaner-image-1');
+            const buttons = document.querySelectorAll('.image-selector button');
+
+            // Change main image
+            mainImage.style.opacity = '0';
+            setTimeout(() => {
+                mainImage.src = cleanerImages[imageNum - 1];
+                mainImage.style.opacity = '1';
+            }, 150);
+
+            // Update active button
+            buttons.forEach((btn, index) => {
+                if (index === imageNum - 1) {
+                    btn.classList.add('active');
+                } else {
+                    btn.classList.remove('active');
+                }
+            });
+        }
+
+        function changeZahiImage(imageNum) {
+            const zahiImages = [
+                'images/زاهي الصحون/WhatsApp Image 2026-03-02 at 1.19.01 AM.jpeg',
+                'images/زاهي الصحون/WhatsApp Image 2026-03-02 at 1.19.01 AM (1).jpeg',
+                'images/زاهي الصحون/WhatsApp Image 2026-03-02 at 1.19.02 AM.jpeg',
+                'images/زاهي الصحون/WhatsApp Image 2026-03-02 at 1.19.02 AM (1).jpeg'
+            ];
+
+            const mainImage = document.getElementById('zahi-image-1');
+            const buttons = document.querySelectorAll('.image-selector button');
+
+            // Change main image
+            mainImage.style.opacity = '0';
+            setTimeout(() => {
+                mainImage.src = zahiImages[imageNum - 1];
+                mainImage.style.opacity = '1';
+            }, 150);
+
+            // Update active button
+            buttons.forEach((btn, index) => {
+                if (index === imageNum - 1) {
+                    btn.classList.add('active');
+                } else {
+                    btn.classList.remove('active');
+                }
+            });
+        }
+
+        function changeWashingImage(imageNum) {
+            const washingImages = [
+                'images/مسحوق غسيل/WhatsApp Image 2026-03-02 at 1.44.12 AM.jpeg',
+                'images/مسحوق غسيل/WhatsApp Image 2026-03-02 at 1.44.12 AM (1).jpeg',
+                'images/مسحوق غسيل/WhatsApp Image 2026-03-02 at 1.44.13 AM.jpeg',
+                'images/مسحوق غسيل/WhatsApp Image 2026-03-02 at 1.44.13 AM (1).jpeg'
+            ];
+
+            const mainImage = document.getElementById('washing-image-1');
+            const buttons = document.querySelectorAll('.image-selector button');
+
+            // Change main image
+            mainImage.style.opacity = '0';
+            setTimeout(() => {
+                mainImage.src = washingImages[imageNum - 1];
+                mainImage.style.opacity = '1';
+            }, 150);
+
+            // Update active button
+            buttons.forEach((btn, index) => {
+                if (index === imageNum - 1) {
+                    btn.classList.add('active');
+                } else {
+                    btn.classList.remove('active');
+                }
+            });
+        }
+
+        function changeLiquidSoapImage(imageNum) {
+            const liquidSoapImages = [
+                'images/صابون سائل/WhatsApp Image 2026-03-02 at 1.44.12 AM.jpeg',
+                'images/صابون سائل/WhatsApp Image 2026-03-02 at 1.44.12 AM (1).jpeg',
+                'images/صابون سائل/WhatsApp Image 2026-03-02 at 1.44.13 AM.jpeg',
+                'images/صابون سائل/WhatsApp Image 2026-03-02 at 1.44.13 AM (1).jpeg'
+            ];
+
+            const mainImage = document.getElementById('liquid-soap-image-1');
+            const buttons = document.querySelectorAll('.image-selector button');
+
+            // Change main image
+            mainImage.style.opacity = '0';
+            setTimeout(() => {
+                mainImage.src = liquidSoapImages[imageNum - 1];
+                mainImage.style.opacity = '1';
+            }, 150);
+
+            // Update active button
+            buttons.forEach((btn, index) => {
+                if (index === imageNum - 1) {
+                    btn.classList.add('active');
+                } else {
+                    btn.classList.remove('active');
+                }
+            });
+        }
+    </script>
+
+    <style>
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgba(0,0,0,0.9);
+            justify-content: center;
+            align-items: center;
+        }
+
+        .modal-content {
+            margin: auto;
+            display: block;
+            width: 80%;
+            max-width: 700px;
+            animation-name: zoom;
+            animation-duration: 0.6s;
+        }
+
+        @keyframes zoom {
+            from {transform:scale(0)}
+            to {transform:scale(1)}
+        }
+
+        .close {
+            position: absolute;
+            top: 15px;
+            right: 35px;
+            color: #f1f1f1;
+            font-size: 40px;
+            font-weight: bold;
+            transition: 0.3s;
+            cursor: pointer;
+        }
+
+        .close:hover,
+        .close:focus {
+            color: #bbb;
+            text-decoration: none;
+            cursor: pointer;
+        }
+    </style>
 </body>
 </html>
