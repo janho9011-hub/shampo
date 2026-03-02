@@ -1,0 +1,493 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>الجل الأخضر - سوبر وايت</title>
+    <link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Amiri', serif;
+            background: linear-gradient(135deg, #ffffff 0%, #e0f7fa 100%);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            padding: 10px;
+            overflow-x: hidden;
+        }
+
+        .container {
+            background: linear-gradient(135deg, #ffffff 0%, #f0f8ff 100%);
+            border-radius: 20px;
+            box-shadow: 0 20px 60px rgba(0, 150, 200, 0.2);
+            max-width: 1400px;
+            width: 100%;
+            overflow: visible;
+            border: 1px solid #00bcd4;
+            margin: 10px auto;
+        }
+
+        header {
+            background: linear-gradient(135deg, #00bcd4 0%, #008ba3 100%);
+            color: white;
+            padding: 30px;
+            text-align: center;
+            border-bottom: 2px solid #00bcd4;
+            position: relative;
+        }
+
+        .header-phone {
+            position: absolute;
+            top: 10px;
+            right: 20px;
+            color: white;
+            font-size: 1.2em;
+            z-index: 10;
+        }
+
+        .header-phone a {
+            color: white;
+            text-decoration: none;
+            margin-left: 15px;
+            display: inline-block;
+        }
+
+        .header-phone a:hover {
+            color: #e0f7fa;
+        }
+
+        .menu-container {
+            position: absolute;
+            top: 10px;
+            left: 20px;
+            z-index: 100;
+        }
+
+        .menu-button {
+            background: linear-gradient(135deg, #00bcd4 0%, #008ba3 100%);
+            color: white;
+            border: none;
+            padding: 12px 20px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 1.1em;
+            font-family: 'Amiri', serif;
+            font-weight: bold;
+            transition: transform 0.3s, box-shadow 0.3s;
+            box-shadow: 0 4px 8px rgba(0, 188, 212, 0.3);
+        }
+
+        .menu-button:hover {
+            transform: scale(1.05);
+            box-shadow: 0 6px 12px rgba(0, 188, 212, 0.4);
+        }
+
+        .menu-dropdown {
+            display: none;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 10px 30px rgba(0, 188, 212, 0.3);
+            min-width: 220px;
+            padding: 8px 0;
+            margin-top: 10px;
+            border: 2px solid #00bcd4;
+            z-index: 1000;
+            max-height: 80vh;
+            overflow-y: auto;
+        }
+
+        .menu-container:hover .menu-dropdown,
+        .menu-dropdown:hover {
+            display: block;
+        }
+
+        .menu-dropdown a {
+            display: block;
+            padding: 10px 18px;
+            color: #333;
+            text-decoration: none;
+            transition: background 0.3s, color 0.3s;
+            font-size: 1em;
+            white-space: nowrap;
+        }
+
+        .menu-dropdown a:hover {
+            background: #00bcd4;
+            color: white;
+        }
+
+        .logo {
+            max-width: 150px;
+            height: auto;
+            margin-bottom: 15px;
+            animation: logoFloat 3s ease-in-out infinite;
+        }
+
+        @keyframes logoFloat {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
+
+        h1 {
+            font-size: 2.5em;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+        }
+
+        .product-section {
+            padding: 40px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .product-header {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .product-header h2 {
+            font-size: 2.5em;
+            color: #00bcd4;
+            margin-bottom: 20px;
+        }
+
+        .product-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .product-images {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .main-image {
+            width: 100%;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 188, 212, 0.2);
+            cursor: pointer;
+            transition: transform 0.3s;
+        }
+
+        .main-image:hover {
+            transform: scale(1.02);
+        }
+
+        .thumbnail-container {
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+
+        .thumbnail {
+            width: 80px;
+            height: 80px;
+            border-radius: 10px;
+            cursor: pointer;
+            border: 2px solid #00bcd4;
+            transition: transform 0.3s, border-color 0.3s;
+        }
+
+        .thumbnail:hover {
+            transform: scale(1.1);
+            border-color: #008ba3;
+        }
+
+        .thumbnail.active {
+            border-color: #008ba3;
+            box-shadow: 0 0 10px rgba(0, 188, 212, 0.5);
+        }
+
+        .product-info {
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 5px 20px rgba(0, 188, 212, 0.1);
+        }
+
+        .product-info h3 {
+            font-size: 2em;
+            color: #00bcd4;
+            margin-bottom: 20px;
+        }
+
+        .product-info p {
+            font-size: 1.1em;
+            line-height: 1.8;
+            margin-bottom: 15px;
+            color: #333;
+        }
+
+        .product-features {
+            margin-top: 30px;
+        }
+
+        .product-features h4 {
+            font-size: 1.5em;
+            color: #00bcd4;
+            margin-bottom: 15px;
+        }
+
+        .product-features ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .product-features li {
+            padding: 10px 0;
+            padding-right: 30px;
+            position: relative;
+            font-size: 1.1em;
+            line-height: 1.6;
+        }
+
+        .product-features li:before {
+            content: "✓";
+            position: absolute;
+            right: 0;
+            color: #00bcd4;
+            font-weight: bold;
+        }
+
+        .product-contact {
+            margin-top: 30px;
+            display: flex;
+            gap: 15px;
+        }
+
+        .btn-contact {
+            background: linear-gradient(135deg, #00bcd4 0%, #008ba3 100%);
+            color: white;
+            padding: 12px 30px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-size: 1.1em;
+            transition: transform 0.3s, box-shadow 0.3s;
+            display: inline-block;
+        }
+
+        .btn-contact:hover {
+            transform: scale(1.05);
+            box-shadow: 0 6px 12px rgba(0, 188, 212, 0.4);
+        }
+
+        .btn-whatsapp {
+            background: linear-gradient(135deg, #25d366 0%, #128c7e 100%);
+            color: white;
+            padding: 12px 30px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-size: 1.1em;
+            transition: transform 0.3s, box-shadow 0.3s;
+            display: inline-block;
+        }
+
+        .btn-whatsapp:hover {
+            transform: scale(1.05);
+            box-shadow: 0 6px 12px rgba(37, 211, 102, 0.4);
+        }
+
+        .back-button {
+            display: inline-block;
+            background: linear-gradient(135deg, #00bcd4 0%, #008ba3 100%);
+            color: white;
+            padding: 10px 25px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-size: 1em;
+            margin: 20px 0;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .back-button:hover {
+            transform: scale(1.05);
+            box-shadow: 0 6px 12px rgba(0, 188, 212, 0.4);
+        }
+
+        footer {
+            background: linear-gradient(135deg, #00bcd4 0%, #008ba3 100%);
+            color: white;
+            padding: 30px;
+            text-align: center;
+            margin-top: 40px;
+        }
+
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        .social-links a {
+            color: white;
+            text-decoration: none;
+            padding: 10px 20px;
+            border-radius: 8px;
+            background: rgba(255, 255, 255, 0.1);
+            transition: transform 0.3s, background 0.3s;
+            display: inline-block;
+        }
+
+        .social-links a:hover {
+            transform: scale(1.1);
+            background: rgba(255, 255, 255, 0.2);
+        }
+
+        @media (max-width: 768px) {
+            .product-content {
+                grid-template-columns: 1fr;
+            }
+
+            .product-section {
+                padding: 20px;
+            }
+
+            .product-header h2 {
+                font-size: 2em;
+            }
+
+            .product-info h3 {
+                font-size: 1.5em;
+            }
+
+            .menu-container {
+                position: static;
+                margin-bottom: 8px;
+                width: 100%;
+                z-index: 1000;
+            }
+
+            .menu-button {
+                width: 100%;
+                padding: 8px 12px;
+                font-size: 0.9em;
+            }
+
+            .menu-dropdown {
+                width: 100%;
+                min-width: auto;
+                border-radius: 5px;
+                max-height: 70vh;
+                overflow-y: auto;
+                position: relative;
+                margin-top: 5px;
+                z-index: 1000;
+            }
+
+            .menu-dropdown a {
+                padding: 8px 15px;
+                font-size: 0.9em;
+            }
+
+            .header-phone {
+                flex-direction: column;
+                gap: 5px;
+                margin-bottom: 5px;
+            }
+
+            .header-phone a {
+                padding: 5px 10px;
+                font-size: 0.85em;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="menu-container">
+                <button class="menu-button">قائمة المنتجات</button>
+                <div class="menu-dropdown">
+                    <a href="liquid-soap.html">سائل غسيل</a>
+                    <a href="green-gel.html">الجل الأخضر</a>
+                    <a href="chlorine.html">الكلور الأبيض</a>
+                    <a href="flash.html">فلاش</a>
+                    <a href="washing.html">مسحوق وسائل الغسيل</a>
+                    <a href="zahi.html">زاهي الصحون</a>
+                    <a href="dish-wash.html">سوبر وايت باور جلي</a>
+                    <a href="general-cleaner.html">منظف عام ومعطر</a>
+                    <a href="toothpaste.html">معجون للجلي</a>
+                </div>
+            </div>
+            <div class="header-phone">
+                <a href="tel:07712281072">📞 0771-228-1072</a>
+                <a href="https://wa.me/+9647712281072">💬 واتساب</a>
+            </div>
+            <img src="images/WhatsApp Image 2026-03-02 at 12.30.48 AM.jpeg" alt="سوبر وايت" class="logo">
+            <h1>سوبر وايت</h1>
+        </header>
+
+        <div class="product-section">
+            <a href="index.html" class="back-button">← العودة إلى الرئيسية</a>
+
+            <div class="product-header">
+                <h2>الجل الأخضر</h2>
+            </div>
+
+            <div class="product-content">
+                <div class="product-images">
+                    <img src="images/الجل الاخضر/WhatsApp Image 2026-03-02 at 1.55.42 AM.jpeg" alt="الجل الأخضر" class="main-image" id="mainImage">
+                    <div class="thumbnail-container">
+                        <img src="images/الجل الاخضر/WhatsApp Image 2026-03-02 at 1.55.42 AM.jpeg" alt="صورة 1" class="thumbnail active" onclick="changeImage(this)">
+                        <img src="images/الجل الاخضر/WhatsApp Image 2026-03-02 at 1.55.42 AM (1).jpeg" alt="صورة 2" class="thumbnail" onclick="changeImage(this)">
+                        <img src="images/الجل الاخضر/WhatsApp Image 2026-03-02 at 1.55.43 AM.jpeg" alt="صورة 3" class="thumbnail" onclick="changeImage(this)">
+                    </div>
+                </div>
+
+                <div class="product-info">
+                    <h3>الجل الأخضر</h3>
+                    <p class="product-size">الحجم: 1 لتر</p>
+
+                    <div class="product-features">
+                        <h4>المميزات:</h4>
+                        <ul>
+                            <li>منظف قوي ومركز للأسطح والأرضيات</li>
+                            <li>يعقم وينظف ويترك رائحة منعشة</li>
+                            <li>آمن على جميع الأسطح</li>
+                            <li>فعال وقوي في إزالة البقع</li>
+                        </ul>
+                    </div>
+
+                    <div class="product-contact">
+                        <a href="tel:07712281072" class="btn-contact">📞 اتصل</a>
+                        <a href="https://wa.me/+9647712281072" class="btn-whatsapp">💬 واتساب</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <footer>
+            <div class="social-links">
+                <a href="https://instagram.com/super.white1" target="_blank">📷 انستقرام</a>
+                <a href="https://www.facebook.com/share/1B6Gng2eFF/" target="_blank">📘 فيسبوك</a>
+            </div>
+        </footer>
+    </div>
+
+    <script>
+        function changeImage(thumbnail) {
+            const mainImage = document.getElementById('mainImage');
+            const thumbnails = document.querySelectorAll('.thumbnail');
+
+            mainImage.src = thumbnail.src;
+
+            thumbnails.forEach(t => t.classList.remove('active'));
+            thumbnail.classList.add('active');
+        }
+    </script>
+</body>
+</html>

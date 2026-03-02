@@ -97,23 +97,28 @@
             background: white;
             border-radius: 10px;
             box-shadow: 0 10px 30px rgba(0, 188, 212, 0.3);
-            min-width: 200px;
-            padding: 10px 0;
+            min-width: 220px;
+            padding: 8px 0;
             margin-top: 10px;
             border: 2px solid #00bcd4;
+            z-index: 1000;
+            max-height: 80vh;
+            overflow-y: auto;
         }
 
-        .menu-container:hover .menu-dropdown {
+        .menu-container:hover .menu-dropdown,
+        .menu-dropdown:hover {
             display: block;
         }
 
         .menu-dropdown a {
             display: block;
-            padding: 12px 20px;
+            padding: 10px 18px;
             color: #333;
             text-decoration: none;
             transition: background 0.3s, color 0.3s;
-            font-size: 1.1em;
+            font-size: 1em;
+            white-space: nowrap;
         }
 
         .menu-dropdown a:hover {
@@ -161,12 +166,13 @@
 
         .products-section {
             padding: 10px;
+            margin-bottom: 20px;
         }
 
         .products-section h2 {
             text-align: center;
             color: #00bcd4;
-            margin-bottom: 10px;
+            margin-bottom: 15px;
             font-size: 1.5em;
             text-shadow: 0 0 10px rgba(0, 188, 212, 0.3);
         }
@@ -174,7 +180,7 @@
         .products-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 10px;
+            gap: 15px;
         }
 
         .product-card {
@@ -184,6 +190,20 @@
             box-shadow: 0 10px 30px rgba(0, 188, 212, 0.15);
             transition: transform 0.3s, box-shadow 0.3s;
             border: 1px solid #00bcd4;
+            display: flex !important;
+            flex-direction: column !important;
+            text-decoration: none;
+            color: inherit;
+        }
+
+        .product-name {
+            padding: 12px;
+            text-align: center;
+            font-size: 1.1em;
+            font-weight: bold;
+            color: #00bcd4;
+            background: rgba(255, 255, 255, 0.9);
+            border-top: 1px solid #00bcd4;
         }
 
         .product-card:hover {
@@ -194,7 +214,7 @@
 
         .product-card .product-image {
             width: 100%;
-            height: 140px;
+            height: 120px;
             overflow: hidden;
             position: relative;
         }
@@ -285,12 +305,13 @@
 
         .product-contact {
             display: flex;
-            gap: 5px;
+            gap: 8px;
+            margin-top: 10px;
         }
 
         .btn-contact {
             flex: 1;
-            padding: 8px;
+            padding: 10px 8px;
             background: linear-gradient(135deg, #00bcd4 0%, #008ba3 100%);
             color: white;
             text-decoration: none;
@@ -299,11 +320,12 @@
             font-weight: bold;
             transition: transform 0.3s;
             font-size: 0.9em;
+            white-space: nowrap;
         }
 
         .btn-whatsapp {
             flex: 1;
-            padding: 8px;
+            padding: 10px 8px;
             background: linear-gradient(135deg, #25D366 0%, #128C7E 100%);
             color: white;
             text-decoration: none;
@@ -312,6 +334,7 @@
             font-weight: bold;
             transition: transform 0.3s;
             font-size: 0.9em;
+            white-space: nowrap;
         }
 
         .btn-contact:hover, .btn-whatsapp:hover {
@@ -404,6 +427,28 @@
             text-align: center;
             color: #ffffff;
             border-top: 1px solid #00bcd4;
+        }
+
+        .footer-social {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-top: 20px;
+        }
+
+        .footer-social a {
+            color: white;
+            text-decoration: none;
+            font-size: 1.2em;
+            transition: transform 0.3s;
+            padding: 8px 16px;
+            border-radius: 8px;
+            background: rgba(255, 255, 255, 0.1);
+        }
+
+        .footer-social a:hover {
+            transform: scale(1.1);
+            background: rgba(255, 255, 255, 0.2);
         }
 
         .contact-section {
@@ -514,31 +559,42 @@
 
             .menu-container {
                 position: static;
-                margin-bottom: 5px;
+                margin-bottom: 8px;
                 width: 100%;
+                z-index: 1000;
             }
 
             .menu-button {
                 width: 100%;
-                padding: 5px 10px;
-                font-size: 0.8em;
+                padding: 8px 12px;
+                font-size: 0.9em;
             }
 
             .menu-dropdown {
                 width: 100%;
                 min-width: auto;
                 border-radius: 5px;
+                max-height: 70vh;
+                overflow-y: auto;
+                position: relative;
+                margin-top: 5px;
+                z-index: 1000;
+            }
+
+            .menu-dropdown a {
+                padding: 8px 15px;
+                font-size: 0.9em;
             }
 
             .header-phone {
                 flex-direction: column;
-                gap: 3px;
-                margin-bottom: 3px;
+                gap: 5px;
+                margin-bottom: 5px;
             }
 
             .header-phone a {
-                padding: 3px 8px;
-                font-size: 0.75em;
+                padding: 5px 10px;
+                font-size: 0.85em;
             }
 
             .products-section {
@@ -726,60 +782,68 @@
             }
 
             .products-section {
-                padding: 20px;
+                padding: 15px;
             }
 
             .products-section h2 {
                 font-size: 1.5em;
-                margin-bottom: 20px;
+                margin-bottom: 15px;
             }
 
             .products-grid {
                 grid-template-columns: repeat(2, 1fr);
-                gap: 15px;
+                gap: 12px;
             }
 
             .product-card {
                 border-radius: 10px;
+                display: flex;
+                flex-direction: column;
             }
 
             .product-card .product-image {
-                height: 180px;
+                height: 160px;
             }
 
             .product-details {
-                padding: 12px;
+                padding: 10px;
+                display: flex;
+                flex-direction: column;
+                flex: 1;
             }
 
             .product-details h3 {
-                font-size: 1.2em;
-                margin-bottom: 8px;
+                font-size: 1.1em;
+                margin-bottom: 6px;
             }
 
             .product-size {
-                font-size: 0.9em;
-                margin-bottom: 8px;
+                font-size: 0.85em;
+                margin-bottom: 6px;
             }
 
             .product-features li {
-                font-size: 0.85em;
-                padding: 4px 0;
+                font-size: 0.8em;
+                padding: 3px 0;
             }
 
             .product-price {
-                font-size: 1.1em;
-                margin-bottom: 12px;
+                font-size: 1em;
+                margin-bottom: 10px;
+                margin-top: auto;
             }
 
             .product-contact {
                 flex-direction: row;
-                gap: 8px;
+                gap: 6px;
+                margin-top: 8px;
             }
 
             .btn-contact,
             .btn-whatsapp {
-                padding: 8px;
-                font-size: 0.9em;
+                padding: 8px 6px;
+                font-size: 0.85em;
+                white-space: nowrap;
             }
 
             .image-selector {
@@ -875,11 +939,15 @@
             <div class="menu-container">
                 <button class="menu-button">قائمة المنتجات</button>
                 <div class="menu-dropdown">
-                    <a href="#products">مزيل دهون</a>
-                    <a href="#products">زاهي</a>
-                    <a href="#products">ملمع فافون</a>
-                    <a href="#products">شامبو ملابس</a>
-                    <a href="#dish-wash">سوبر وايت باور جلي</a>
+                    <a href="liquid-soap.html">سائل غسيل</a>
+                    <a href="green-gel.html">الجل الأخضر</a>
+                    <a href="chlorine.html">الكلور الأبيض</a>
+                    <a href="flash.html">فلاش</a>
+                    <a href="washing.html">مسحوق وسائل الغسيل</a>
+                    <a href="zahi.html">زاهي الصحون</a>
+                    <a href="dish-wash.html">سوبر وايت باور جلي</a>
+                    <a href="general-cleaner.html">منظف عام ومعطر</a>
+                    <a href="toothpaste.html">معجون للجلي</a>
                 </div>
             </div>
             <div class="header-phone">
@@ -893,265 +961,60 @@
         <div class="products-section">
             <h2>منتجاتنا</h2>
             <div class="products-grid">
-                <div class="product-card">
+                <a href="liquid-soap.html" class="product-card" id="liquid-soap">
                     <div class="product-image">
-                        <img id="liquid-soap-image-1" src="images/صابون سائل/WhatsApp Image 2026-03-02 at 1.49.07 AM.jpeg" alt="سائل غسيل" onclick="openModal(this.src)" style="cursor: pointer;">
+                        <img id="liquid-soap-image-1" src="images/صابون سائل/WhatsApp Image 2026-03-02 at 1.49.07 AM.jpeg" alt="سائل غسيل">
                     </div>
-                    <div class="product-details">
-                        <h3>سائل غسيل</h3>
-                        <p class="product-size">متوفر بأحجام متعددة</p>
-                        <div class="product-features">
-                            <ul>
-                                <li>صابون سائل لطيف على اليدين</li>
-                                <li>ينظف بفعالية ويحافظ على نعومة البشرة</li>
-                                <li>رائحة منعشة تدوم طويلاً</li>
-                                <li>مناسب للاستخدام اليومي</li>
-                            </ul>
-                        </div>
-                        <div class="product-price">
-                            <span class="price-label">السعر:</span>
-                            <span class="price-value">قريباً</span>
-                        </div>
-                        <div class="product-contact">
-                            <a href="tel:07712281072" class="btn-contact">📞 اتصل</a>
-                            <a href="https://wa.me/+9647712281072" class="btn-whatsapp">💬 واتساب</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="product-card">
+                    <div class="product-name">سائل غسيل</div>
+                </a>
+                <a href="green-gel.html" class="product-card" id="green-gel">
                     <div class="product-image">
-                        <img id="green-gel-image-1" src="images/الجل الاخضر/WhatsApp Image 2026-03-02 at 1.55.42 AM.jpeg" alt="الجل الأخضر" onclick="openModal(this.src)" style="cursor: pointer;">
+                        <img id="green-gel-image-1" src="images/الجل الاخضر/WhatsApp Image 2026-03-02 at 1.55.42 AM.jpeg" alt="الجل الأخضر">
                     </div>
-                    <div class="product-details">
-                        <h3>الجل الأخضر</h3>
-                        <p class="product-size">متوفر بأحجام متعددة</p>
-                        <div class="product-features">
-                            <ul>
-                                <li>جل تنظيف مركز بفعالية عالية لإزالة الدهون والأوساخ الصعبة</li>
-                                <li>مناسب للمطابخ والحمامات</li>
-                                <li>كمية قليلة تعطي نتيجة قوية</li>
-                                <li>يترك نظافة واضحة ولمعان</li>
-                            </ul>
-                        </div>
-                        <div class="product-price">
-                            <span class="price-label">السعر:</span>
-                            <span class="price-value">قريباً</span>
-                        </div>
-                        <div class="product-contact">
-                            <a href="tel:07712281072" class="btn-contact">📞 اتصل</a>
-                            <a href="https://wa.me/+9647712281072" class="btn-whatsapp">💬 واتساب</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="product-card">
+                    <div class="product-name">الجل الأخضر</div>
+                </a>
+                <a href="chlorine.html" class="product-card" id="chlorine">
                     <div class="product-image">
-                        <img id="chlorine-image-1" src="images/الكلور الابيض/WhatsApp Image 2026-03-02 at 1.58.34 AM.jpeg" alt="الكلور الأبيض" onclick="openModal(this.src)" style="cursor: pointer;">
+                        <img id="chlorine-image-1" src="images/الكلور الابيض/WhatsApp Image 2026-03-02 at 1.58.34 AM.jpeg" alt="الكلور الأبيض">
                     </div>
-                    <div class="product-details">
-                        <h3>الكلور الأبيض</h3>
-                        <p class="product-size">متوفر بأحجام متعددة</p>
-                        <div class="product-features">
-                            <ul>
-                                <li>كلور مبيض قوي للتعقيم وإزالة البقع</li>
-                                <li>يزيل الاصفرار</li>
-                                <li>يعقم الأسطح والحمامات</li>
-                                <li>يمنح بياض ولمعان واضح</li>
-                            </ul>
-                        </div>
-                        <div class="product-price">
-                            <span class="price-label">السعر:</span>
-                            <span class="price-value">قريباً</span>
-                        </div>
-                        <div class="product-contact">
-                            <a href="tel:07712281072" class="btn-contact">📞 اتصل</a>
-                            <a href="https://wa.me/+9647712281072" class="btn-whatsapp">💬 واتساب</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="product-card">
+                    <div class="product-name">الكلور الأبيض</div>
+                </a>
+                <a href="flash.html" class="product-card" id="flash">
                     <div class="product-image">
-                        <img id="flash-image-1" src="images/فلاش/WhatsApp Image 2026-03-02 at 2.01.27 AM.jpeg" alt="فلاش" onclick="openModal(this.src)" style="cursor: pointer;">
+                        <img id="flash-image-1" src="images/فلاش/WhatsApp Image 2026-03-02 at 2.01.27 AM.jpeg" alt="فلاش">
                     </div>
-                    <div class="product-details">
-                        <h3>فلاش</h3>
-                        <p class="product-size">متوفر بأحجام متعددة</p>
-                        <div class="product-features">
-                            <ul>
-                                <li>منظف حمامات فعال لإزالة الترسبات والكلس بسرعة</li>
-                                <li>يقضي على الروائح</li>
-                                <li>يزيل البقع الصعبة</li>
-                                <li>يترك لمعان ونظافة واضحة</li>
-                            </ul>
-                        </div>
-                        <div class="product-price">
-                            <span class="price-label">السعر:</span>
-                            <span class="price-value">قريباً</span>
-                        </div>
-                        <div class="product-contact">
-                            <a href="tel:07712281072" class="btn-contact">📞 اتصل</a>
-                            <a href="https://wa.me/+9647712281072" class="btn-whatsapp">💬 واتساب</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="product-card">
+                    <div class="product-name">فلاش</div>
+                </a>
+                <a href="washing.html" class="product-card" id="washing">
                     <div class="product-image">
-                        <img id="washing-image-1" src="images/مسحوق غسيل/WhatsApp Image 2026-03-02 at 1.44.12 AM.jpeg" alt="مسحوق وسائل الغسيل" onclick="openModal(this.src)" style="cursor: pointer;">
+                        <img id="washing-image-1" src="images/مسحوق غسيل/WhatsApp Image 2026-03-02 at 1.44.12 AM.jpeg" alt="مسحوق وسائل الغسيل">
                     </div>
-                    <div class="image-selector">
-                        <button class="active" onclick="changeWashingImage(1)"><img src="images/مسحوق غسيل/WhatsApp Image 2026-03-02 at 1.44.12 AM.jpeg" alt="صورة 1" onclick="event.stopPropagation(); openModal('images/مسحوق غسيل/WhatsApp Image 2026-03-02 at 1.44.12 AM.jpeg')"></button>
-                        <button onclick="changeWashingImage(2)"><img src="images/مسحوق غسيل/WhatsApp Image 2026-03-02 at 1.44.12 AM (1).jpeg" alt="صورة 2" onclick="event.stopPropagation(); openModal('images/مسحوق غسيل/WhatsApp Image 2026-03-02 at 1.44.12 AM (1).jpeg')"></button>
-                        <button onclick="changeWashingImage(3)"><img src="images/مسحوق غسيل/WhatsApp Image 2026-03-02 at 1.44.13 AM.jpeg" alt="صورة 3" onclick="event.stopPropagation(); openModal('images/مسحوق غسيل/WhatsApp Image 2026-03-02 at 1.44.13 AM.jpeg')"></button>
-                        <button onclick="changeWashingImage(4)"><img src="images/مسحوق غسيل/WhatsApp Image 2026-03-02 at 1.44.13 AM (1).jpeg" alt="صورة 4" onclick="event.stopPropagation(); openModal('images/مسحوق غسيل/WhatsApp Image 2026-03-02 at 1.44.13 AM (1).jpeg')"></button>
-                    </div>
-                    <div class="product-details">
-                        <h3>مسحوق وسائل الغسيل</h3>
-                        <p class="product-size">متوفر بأحجام متعددة</p>
-                        <div class="product-features">
-                            <ul>
-                                <li>تركيبة متطورة توفر تنظيف عميق وإزالة فعالة للبقع الصعبة</li>
-                                <li>سائل مخصص للغسالات الأوتوماتيك برغوة متوازنة تحافظ على كفاءة الغسالة</li>
-                                <li>مسحوق فعال للغسالات العادية يمنح نظافة قوية وانتعاش يدوم</li>
-                                <li>نتائج واضحة من أول غسلة مع رائحة منعشة تدوم طويلاً</li>
-                            </ul>
-                        </div>
-                        <div class="product-price">
-                            <span class="price-label">السعر:</span>
-                            <span class="price-value">قريباً</span>
-                        </div>
-                        <div class="product-contact">
-                            <a href="tel:07712281072" class="btn-contact">📞 اتصل</a>
-                            <a href="https://wa.me/+9647712281072" class="btn-whatsapp">💬 واتساب</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="product-card">
+                    <div class="product-name">مسحوق وسائل الغسيل</div>
+                </a>
+                <a href="zahi.html" class="product-card" id="zahi">
                     <div class="product-image">
-                        <img id="zahi-image-1" src="images/زاهي الصحون/WhatsApp Image 2026-03-02 at 1.19.01 AM.jpeg" alt="زاهي الصحون" onclick="openModal(this.src)" style="cursor: pointer;">
+                        <img id="zahi-image-1" src="images/زاهي الصحون/WhatsApp Image 2026-03-02 at 1.19.01 AM.jpeg" alt="زاهي الصحون">
                     </div>
-                    <div class="image-selector">
-                        <button class="active" onclick="changeZahiImage(1)"><img src="images/زاهي الصحون/WhatsApp Image 2026-03-02 at 1.19.01 AM.jpeg" alt="صورة 1" onclick="event.stopPropagation(); openModal('images/زاهي الصحون/WhatsApp Image 2026-03-02 at 1.19.01 AM.jpeg')"></button>
-                        <button onclick="changeZahiImage(2)"><img src="images/زاهي الصحون/WhatsApp Image 2026-03-02 at 1.19.01 AM (1).jpeg" alt="صورة 2" onclick="event.stopPropagation(); openModal('images/زاهي الصحون/WhatsApp Image 2026-03-02 at 1.19.01 AM (1).jpeg')"></button>
-                        <button onclick="changeZahiImage(3)"><img src="images/زاهي الصحون/WhatsApp Image 2026-03-02 at 1.19.02 AM.jpeg" alt="صورة 3" onclick="event.stopPropagation(); openModal('images/زاهي الصحون/WhatsApp Image 2026-03-02 at 1.19.02 AM.jpeg')"></button>
-                        <button onclick="changeZahiImage(4)"><img src="images/زاهي الصحون/WhatsApp Image 2026-03-02 at 1.19.02 AM (1).jpeg" alt="صورة 4" onclick="event.stopPropagation(); openModal('images/زاهي الصحون/WhatsApp Image 2026-03-02 at 1.19.02 AM (1).jpeg')"></button>
-                    </div>
-                    <div class="product-details">
-                        <h3>زاهي الصحون</h3>
-                        <p class="product-size">الحجم: 750 مل</p>
-                        <div class="product-features">
-                            <ul>
-                                <li>تركيبة فعالة تعيد للصحون لمعانها الطبيعي وتحافظ على بريقها بعد كل غسلة</li>
-                                <li>يزيل آثار الدهون بسهولة</li>
-                                <li>يمنح لمعان واضح</li>
-                                <li>مناسب للاستخدام اليومي</li>
-                                <li>اختيار مثالي لصحون نظيفة ولامعة كل يوم ✨</li>
-                            </ul>
-                        </div>
-                        <div class="product-price">
-                            <span class="price-label">السعر:</span>
-                            <span class="price-value">قريباً</span>
-                        </div>
-                        <div class="product-contact">
-                            <a href="tel:07712281072" class="btn-contact">📞 اتصل</a>
-                            <a href="https://wa.me/+9647712281072" class="btn-whatsapp">💬 واتساب</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="product-card">
+                    <div class="product-name">زاهي الصحون</div>
+                </a>
+                <a href="dish-wash.html" class="product-card" id="dish-wash">
                     <div class="product-image">
-                        <img id="dish-image-1" src="images/ساىل جلي/WhatsApp Image 2026-03-02 at 12.41.39 AM.jpeg" alt="سوبر وايت باور جلي" onclick="openModal(this.src)" style="cursor: pointer;">
+                        <img id="dish-image-1" src="images/ساىل جلي/WhatsApp Image 2026-03-02 at 12.41.39 AM.jpeg" alt="سوبر وايت باور جلي">
                     </div>
-                    <div class="image-selector">
-                        <button class="active" onclick="changeDishImage(1)"><img src="images/ساىل جلي/WhatsApp Image 2026-03-02 at 12.41.39 AM.jpeg" alt="صورة 1" onclick="event.stopPropagation(); openModal('images/ساىل جلي/WhatsApp Image 2026-03-02 at 12.41.39 AM.jpeg')"></button>
-                        <button onclick="changeDishImage(2)"><img src="images/ساىل جلي/WhatsApp Image 2026-03-02 at 12.41.39 AM (1).jpeg" alt="صورة 2" onclick="event.stopPropagation(); openModal('images/ساىل جلي/WhatsApp Image 2026-03-02 at 12.41.39 AM (1).jpeg')"></button>
-                        <button onclick="changeDishImage(3)"><img src="images/ساىل جلي/WhatsApp Image 2026-03-02 at 12.41.39 AM (2).jpeg" alt="صورة 3" onclick="event.stopPropagation(); openModal('images/ساىل جلي/WhatsApp Image 2026-03-02 at 12.41.39 AM (2).jpeg')"></button>
-                        <button onclick="changeDishImage(4)"><img src="images/ساىل جلي/WhatsApp Image 2026-03-02 at 12.41.40 AM.jpeg" alt="صورة 4" onclick="event.stopPropagation(); openModal('images/ساىل جلي/WhatsApp Image 2026-03-02 at 12.41.40 AM.jpeg')"></button>
-                        <button onclick="changeDishImage(5)"><img src="images/ساىل جلي/WhatsApp Image 2026-03-02 at 12.41.40 AM (1).jpeg" alt="صورة 5" onclick="event.stopPropagation(); openModal('images/ساىل جلي/WhatsApp Image 2026-03-02 at 12.41.40 AM (1).jpeg')"></button>
-                        <button onclick="changeDishImage(6)"><img src="images/ساىل جلي/WhatsApp Image 2026-03-02 at 12.41.40 AM (2).jpeg" alt="صورة 6" onclick="event.stopPropagation(); openModal('images/ساىل جلي/WhatsApp Image 2026-03-02 at 12.41.40 AM (2).jpeg')"></button>
-                        <button onclick="changeDishImage(7)"><img src="images/ساىل جلي/WhatsApp Image 2026-03-02 at 12.41.41 AM.jpeg" alt="صورة 7" onclick="event.stopPropagation(); openModal('images/ساىل جلي/WhatsApp Image 2026-03-02 at 12.41.41 AM.jpeg')"></button>
-                        <button onclick="changeDishImage(8)"><img src="images/ساىل جلي/WhatsApp Image 2026-03-02 at 12.41.41 AM (1).jpeg" alt="صورة 8" onclick="event.stopPropagation(); openModal('images/ساىل جلي/WhatsApp Image 2026-03-02 at 12.41.41 AM (1).jpeg')"></button>
-                        <button onclick="changeDishImage(9)"><img src="images/ساىل جلي/WhatsApp Image 2026-03-02 at 12.41.41 AM (2).jpeg" alt="صورة 9" onclick="event.stopPropagation(); openModal('images/ساىل جلي/WhatsApp Image 2026-03-02 at 12.41.41 AM (2).jpeg')"></button>
-                        <button onclick="changeDishImage(10)"><img src="images/ساىل جلي/WhatsApp Image 2026-03-02 at 12.41.42 AM.jpeg" alt="صورة 10" onclick="event.stopPropagation(); openModal('images/ساىل جلي/WhatsApp Image 2026-03-02 at 12.41.42 AM.jpeg')"></button>
-                        <button onclick="changeDishImage(11)"><img src="images/ساىل جلي/WhatsApp Image 2026-03-02 at 12.41.42 AM (1).jpeg" alt="صورة 11" onclick="event.stopPropagation(); openModal('images/ساىل جلي/WhatsApp Image 2026-03-02 at 12.41.42 AM (1).jpeg')"></button>
-                        <button onclick="changeDishImage(12)"><img src="images/ساىل جلي/WhatsApp Image 2026-03-02 at 12.41.42 AM (2).jpeg" alt="صورة 12" onclick="event.stopPropagation(); openModal('images/ساىل جلي/WhatsApp Image 2026-03-02 at 12.41.42 AM (2).jpeg')"></button>
-                    </div>
-                    <div class="product-details">
-                        <h3>سوبر وايت باور جلي</h3>
-                        <p class="product-size">الحجم: 750 مل</p>
-                        <div class="product-features">
-                            <ul>
-                                <li>يزيل الدهون بسرعة</li>
-                                <li>يمنح الصحون لمعان واضح</li>
-                                <li>برغوة كثيفة</li>
-                                <li>روائح منعشة متعددة</li>
-                            </ul>
-                        </div>
-                        <div class="product-price">
-                            <span class="price-label">السعر:</span>
-                            <span class="price-value">قريباً</span>
-                        </div>
-                        <div class="product-contact">
-                            <a href="tel:07712281072" class="btn-contact">📞 اتصل</a>
-                            <a href="https://wa.me/+9647712281072" class="btn-whatsapp">💬 واتساب</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="product-card">
+                    <div class="product-name">سوبر وايت باور جلي</div>
+                </a>
+                <a href="general-cleaner.html" class="product-card" id="general-cleaner">
                     <div class="product-image">
-                        <img id="cleaner-image-1" src="images/منظف عام/WhatsApp Image 2026-03-02 at 12.47.24 AM.jpeg" alt="منظف عام ومعطر" onclick="openModal(this.src)" style="cursor: pointer;">
+                        <img id="cleaner-image-1" src="images/منظف عام/WhatsApp Image 2026-03-02 at 12.47.24 AM.jpeg" alt="منظف عام ومعطر">
                     </div>
-                    <div class="image-selector">
-                        <button class="active" onclick="changeCleanerImage(1)"><img src="images/منظف عام/WhatsApp Image 2026-03-02 at 12.47.24 AM.jpeg" alt="صورة 1" onclick="event.stopPropagation(); openModal('images/منظف عام/WhatsApp Image 2026-03-02 at 12.47.24 AM.jpeg')"></button>
-                        <button onclick="changeCleanerImage(2)"><img src="images/منظف عام/WhatsApp Image 2026-03-02 at 12.47.25 AM (1).jpeg" alt="صورة 2" onclick="event.stopPropagation(); openModal('images/منظف عام/WhatsApp Image 2026-03-02 at 12.47.25 AM (1).jpeg')"></button>
-                        <button onclick="changeCleanerImage(3)"><img src="images/منظف عام/WhatsApp Image 2026-03-02 at 12.47.25 AM (2).jpeg" alt="صورة 3" onclick="event.stopPropagation(); openModal('images/منظف عام/WhatsApp Image 2026-03-02 at 12.47.25 AM (2).jpeg')"></button>
-                        <button onclick="changeCleanerImage(4)"><img src="images/منظف عام/WhatsApp Image 2026-03-02 at 12.47.25 AM (3).jpeg" alt="صورة 4" onclick="event.stopPropagation(); openModal('images/منظف عام/WhatsApp Image 2026-03-02 at 12.47.25 AM (3).jpeg')"></button>
-                        <button onclick="changeCleanerImage(5)"><img src="images/منظف عام/WhatsApp Image 2026-03-02 at 12.47.25 AM.jpeg" alt="صورة 5" onclick="event.stopPropagation(); openModal('images/منظف عام/WhatsApp Image 2026-03-02 at 12.47.25 AM.jpeg')"></button>
-                        <button onclick="changeCleanerImage(6)"><img src="images/منظف عام/WhatsApp Image 2026-03-02 at 12.47.26 AM.jpeg" alt="صورة 6" onclick="event.stopPropagation(); openModal('images/منظف عام/WhatsApp Image 2026-03-02 at 12.47.26 AM.jpeg')"></button>
-                    </div>
-                    <div class="product-details">
-                        <h3>منظف عام ومعطر</h3>
-                        <p class="product-size">الحجم: 750 مل</p>
-                        <div class="product-features">
-                            <ul>
-                                <li>منظف متعدد الاستخدامات للأسطح والأرضيات</li>
-                                <li>يعقم وينظف ويترك رائحة تدوم لساعات</li>
-                                <li>آمن على جميع الأسطح</li>
-                                <li>فعال وقوي</li>
-                            </ul>
-                        </div>
-                        <div class="product-price">
-                            <span class="price-label">السعر:</span>
-                            <span class="price-value">قريباً</span>
-                        </div>
-                        <div class="product-contact">
-                            <a href="tel:07712281072" class="btn-contact">📞 اتصل</a>
-                            <a href="https://wa.me/+9647712281072" class="btn-whatsapp">💬 واتساب</a>
-                        </div>
-                    </div>
-                <div class="product-card">
+                    <div class="product-name">منظف عام ومعطر</div>
+                </a>
+                <a href="toothpaste.html" class="product-card" id="toothpaste">
                     <div class="product-image">
-                        <img id="powder-image-1" src="images/معجون للجلي/WhatsApp Image 2026-03-02 at 1.12.30 AM.jpeg" alt="معجون للجلي" onclick="openModal(this.src)" style="cursor: pointer;">
+                        <img id="powder-image-1" src="images/معجون للجلي/WhatsApp Image 2026-03-02 at 1.12.30 AM.jpeg" alt="معجون للجلي">
                     </div>
-                    <div class="product-details">
-                        <h3>معجون للجلي</h3>
-                        <p class="product-size">الحجم: 500 غرام</p>
-                        <div class="product-features">
-                            <ul>
-                                <li>معجون تنظيف مركز يزيل الدهون الصعبة والبقع المتراكمة بسهولة وفعالية عالية</li>
-                                <li>فعال وقوي</li>
-                                <li>آمن على اليدين</li>
-                                <li>يعطي لمعاناً استثنائياً</li>
-                            </ul>
-                        </div>
-                        <div class="product-price">
-                            <span class="price-label">السعر:</span>
-                            <span class="price-value">قريباً</span>
-                        </div>
-                        <div class="product-contact">
-                            <a href="tel:07712281072" class="btn-contact">📞 اتصل</a>
-                            <a href="https://wa.me/+9647712281072" class="btn-whatsapp">💬 واتساب</a>
-                        </div>
-                    </div>
-                </div>
+                    <div class="product-name">معجون للجلي</div>
+                </a>
             </div>
         </div>
 
@@ -1169,19 +1032,7 @@
 
             </div>
 
-            <div class="payment-methods">
-                <h3>طرق الدفع المتاحة</h3>
-                <div class="payment-options">
-                    <div class="payment-option">
-                        <i>💵</i>
-                        <span>دفع كاش</span>
-                    </div>
-                    <div class="payment-option">
-                        <i>💳</i>
-                        <span>بطاقة الكي كارد</span>
-                    </div>
-                </div>
-            </div>
+
         </div>
 
         <div class="barcode-section">
@@ -1194,6 +1045,10 @@
         <footer>
             <p>جميع الحقوق محفوظة © 2024</p>
             <p class="footer-supplier">المصدر: استاذ رواد</p>
+            <div class="footer-social">
+                <a href="https://instagram.com/super.white1" target="_blank">📷 انستقرام</a>
+                <a href="https://www.facebook.com/share/1B6Gng2eFF/" target="_blank">📘 فيسبوك</a>
+            </div>
         </footer>
 
         <div id="imageModal" class="modal">
